@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Forge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>QR Code Forge</h1>
+        <p>Generate QR codes for URLs or any text!</p>
+        
+        <div class="input-section">
+            <input type="text" id="textInput" placeholder="Enter text or URL...">
+            <button onclick="generateQRCode()">Generate QR</button>
+        </div>
+
+        <div class="qr-section" id="qrContainer">
+            <img id="qrCodeImage" alt="QR Code will appear here">
+        </div>
+        
+        <a id="downloadLink" class="hidden" download="qrcode.png">Download QR Code</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
