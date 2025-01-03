@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #0A0A23; /* Dark blue background */
+}
+
+.wrapper {
+  width: 65vmin;
+  height: 75vmin;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: #1E1E3F; /* Dark theme for game board */
+  box-shadow: 0 20px 40px rgba(52, 87, 220, 0.2);
+}
+
+.game-details {
+  color: #B8C6DC;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 20px 27px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.play-board {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  background: #000000; /* Black background for play board */
+  grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+}
+
+.play-board .food {
+  border-radius: 100%;
+  background: #ff0040; /* Contrasting red food */
+}
+
+.play-board .bonus-food {
+  border-radius: 100%;
+  background: #FFD700; /* Gold for bonus food */
+}
+
+.play-board .head {
+  border-radius: 5px;
+  background: #13f317; /* Light blue for snake */
+}
+
+.play-board .obstacle {
+  background: #0de6f1; /* Black for obstacles */
+}
+
+.play-board .power-up {
+  background: #00FF00; /* Green for power-ups */
+}
+
+.controls {
+  display: none;
+  justify-content: space-between;
+}
+
+.controls i {
+  padding: 25px 0;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #B8C6DC;
+  width: calc(100% / 4);
+  cursor: pointer;
+  border-right: 1px solid #171B26;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.new-game-button, .restart-game-button {
+  margin: 0 10px;
+  padding: 15px 25px;
+  font-size: 1.1rem;
+  color: #fff;
+  background: linear-gradient(135deg, #FFD700, #FFB300); /* Yellow gradient background */
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  font-weight: bold;
+}
+
+.new-game-button:hover, .restart-game-button:hover {
+  background: linear-gradient(135deg, #FFB300, #FFD700); /* Reverse gradient on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+.new-game-button:active, .restart-game-button:active {
+  transform: scale(1); /* Return to normal size when clicked */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Smaller shadow when clicked */
+}
+
+/* Button Focus Effects */
+.new-game-button:focus, .restart-game-button:focus {
+  outline: none;
+  border: 2px solid #FFD700; /* Yellow border on focus */
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Soft yellow glow */
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 800px) {
+  .wrapper {
+    width: 90vmin;
+    height: 120vmin;
+  }
+
+  .game-details {
+    font-size: 1rem;
+    padding: 15px 27px;
+  }
+
+  .controls {
+    display: flex;
+  }
+
+  .controls i {
+    padding: 15px 0;
+    font-size: 1rem;
+  }
+}
