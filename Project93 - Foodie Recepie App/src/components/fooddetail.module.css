@@ -1,0 +1,66 @@
+.recipecard{
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgb(0, 0,0, 0.2);
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+}
+
+.recipename{
+font-size: 24px;
+margin-bottom: 10px;
+}
+
+.recipeimage{
+max-width: 100%;
+height: auto;
+border-radius: 5px; 
+margin-bottom: 10px;
+}
+
+.recipedetails{
+   margin-bottom: 20px; 
+   display: flex;
+   justify-content:space-between;
+   align-items: center;
+}
+
+.recipeinstructions{
+padding: 0%;
+border-radius: 5px;
+color: gray;
+}
+/* ------------------------ */
+.item_container{
+    display: flex;
+    padding: 10px;
+    margin-top: 50px;
+    box-shadow: 0 4px 6px rgb(0, 0,0, 0.1);
+    border-radius: 10px;
+}
+
+.image_container{
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.imagess{
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.name_container{
+  margin-left: 50px;  
+}
+
+.name{
+    font-size: larger;
+    font-weight: bold;
+}
+.amount{
+    font-weight: bold;
+}
