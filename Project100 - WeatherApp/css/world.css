@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Rubik", sans-serif;
+}
+
+:root {
+  --font-color-main: #00d9ff; /* Neon Blue */
+  --white-color: #ffffff;
+  --glow-effect: 0px 0px 15px rgba(0, 217, 255, 0.8);
+  --white-color: #fff;
+  --glow-color: 0px 0px 15px rgba(0, 217, 255, 0.8);
+  --gradient-bg: linear-gradient(135deg, #0ebfff, #0d1a3e);
+}
+
+body {
+  background: var(--gradient-bg);
+  color: var(--white-color);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.pc {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin: 0 auto;
+  border: 1px solid var(--white-color);
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: fit-content;
+  bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 60px;
+  border: 2px solid var(--white-color);
+  border-radius: 40px;
+  background: var(--gradient-bg);
+  box-shadow: 0 0 10px var(--glow-color);
+}
+
+nav ul {
+  display: flex;
+  gap: 2pc;
+}
+
+nav ul li a {
+  color: var(--white-color);
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+  text-shadow: 0 0 10px var(--white-color);
+}
+
+.active {
+  background-color: var(--white-color);
+  color: var(--font-color-main);
+  border-radius: 100px;
+  padding: 8px 15px;
+  box-shadow: 0 0 10px var(--white-color);
+}
+
+/* Main section */
+.section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+}
+
+.date {
+  text-align: left;
+  font-weight: 500;
+  font-size: 20px;
+  padding: 30px 0;
+  color: var(--white-color);
+}
+
+.button {
+  font-size: 20px;
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+.button:hover {
+  text-shadow: 0 0 10px var(--white-color);
+}
+
+/* Section box */
+.section-box {
+  width: auto;
+  height: 100%;
+  padding: 0 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.add-section {
+  min-width: 280px;
+  height: 250px;
+  top: -60rem;
+  border-radius: 40px;
+  border: 1px solid var(--white-color);
+  position: absolute;
+  transition: 0.4s ease-in;
+  background: var(--gradient-bg);
+  box-shadow: 0 0 15px var(--glow-color);
+}
+
+.add-section-title {
+  text-align: center;
+  color: var(--white-color);
+  padding-top: 40px;
+}
+
+.search {
+  margin-top: 20px;
+  width: 80%;
+  height: 35px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px var(--glow-color);
+  background-color: var(--white-color);
+}
+
+.search input {
+  width: 80%;
+  padding: 8px;
+  font-size: 15px;
+  color: var(--font-color-main);
+  border: none;
+  outline: none;
+}
+
+.search input::placeholder {
+  color: var(--font-color-main);
+}
+
+.weather-box {
+  height: 180px;
+  min-width: 280px;
+  border-radius: 40px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--gradient-bg);
+  box-shadow: 0 0 15px var(--glow-color);
+}
+
+.name {
+  padding-left: 40px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--white-color);
+  height: auto;
+}
+
+.city-name {
+  font-size: 20px;
+}
+
+.weather-temp {
+  font-size: 60px;
+}
+
+.weather-icon {
+  padding: 0 20px;
+  width: 220px;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather-icon img {
+  width: 100%;
+}
+
+@media (max-width: 400px) {
+  .pc {
+    width: 100%;
+    max-width: none;
+    border: none;
+    border-radius: 0;
+  }
+}
