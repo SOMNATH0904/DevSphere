@@ -1,125 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
-}
-
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: #0A0A23;
-}
-
-.wrapper {
-  width: 65vmin;
-  height: 75vmin;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  background: #1E1E3F;
-  box-shadow: 0 20px 40px rgba(52, 87, 220, 0.2);
-}
-
-.game-details {
-  color: #B8C6DC;
-  font-weight: 500;
-  font-size: 1.2rem;
-  padding: 20px 27px;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.play-board {
-  height: 100%;
-  width: 100%;
-  display: grid;
-  background: #000000;
-  grid-template: repeat(30, 1fr) / repeat(30, 1fr);
-}
-
-.play-board .food {
-  border-radius: 100%;
-  background: #ff0040;
-}
-
-.play-board .head {
-  border-radius: 5px;
-  background: #13f317;
-}
-
-.controls {
-  display: none;
-  justify-content: space-between;
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.new-game-button, .restart-game-button {
-  margin: 0 10px;
-  padding: 15px 25px;
-  font-size: 1.1rem;
-  color: #fff;
-  background: linear-gradient(135deg, #FFD700, #FFB300);
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  font-weight: bold;
-}
-
-.new-game-button:hover, .restart-game-button:hover {
-  background: linear-gradient(135deg, #FFB300, #FFD700);
-  transform: scale(1.1);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-  background-color: #1E1E3F;
-  margin: 15% auto;
-  padding: 20px;
-  border-radius: 10px;
-  width: 80%;
-  max-width: 400px;
-  text-align: center;
-  color: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-#replayButton {
-  margin-top: 15px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  color: #fff;
-  background: linear-gradient(135deg, #FFD700, #FFB300);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#replayButton:hover {
-  background: linear-gradient(135deg, #FFB300, #FFD700);
-}
+  #gameOverModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+  }
+  .modal-content {
+    background: #222;
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    width: 300px;
+  }
+  .modal-content h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  .modal-content p {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .modal-buttons button {
+    background: #444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  .modal-buttons button:hover {
+    background: #666;
+  }
+  .modal-buttons button:active {
+    transform: scale(0.95);
+  }

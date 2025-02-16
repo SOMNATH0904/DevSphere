@@ -1,112 +1,85 @@
-const playBoard = document.querySelector(".play-board");
-const scoreElement = document.querySelector(".score");
-const highScoreElement = document.querySelector(".high-score");
-const levelElement = document.querySelector(".level");
-const newGameButton = document.querySelector(".new-game-button");
-const restartGameButton = document.querySelector(".restart-game-button");
+// Show Game Over Modal
+function showGameOver() {
+  const modal = document.getElementById('gameOverModal');
+  const finalScore = document.getElementById('finalScore');
+  finalScore.textContent = score;
+  modal.style.display = 'flex';
+}
 
-let gameOver = false;
-let foodX, foodY;
-let snakeX = 5, snakeY = 5;
-let velocityX = 0, velocityY = 0;
-let snakeBody = [];
-let setIntervalId;
-let score = 0;
-let level = 1;
-let gameSpeed = 300;
-
-let highScore = localStorage.getItem("high-score") || 0;
-highScoreElement.innerText = `High Score: ${highScore}`;
-
-const updateFoodPosition = () => {
-  foodX = Math.floor(Math.random() * 30) + 1;
-  foodY = Math.floor(Math.random() * 30) + 1;
-};
-
-const handleGameOver = () => {
-  clearInterval(setIntervalId);
-  const gameOverModal = document.getElementById("gameOverModal");
-  const finalScoreElement = document.getElementById("finalScore");
-  gameOverModal.style.display = "block";
-  finalScoreElement.innerText = score;
-  document.getElementById("replayButton").addEventListener("click", () => {
-    gameOverModal.style.display = "none";
-    startNewGame();
-  });
-};
-
-const changeDirection = (e) => {
-  if (e.key === "ArrowUp" && velocityY !== 1) {
-    velocityX = 0;
-    velocityY = -1;
-  } else if (e.key === "ArrowDown" && velocityY !== -1) {
-    velocityX = 0;
-    velocityY = 1;
-  } else if (e.key === "ArrowLeft" && velocityX !== 1) {
-    velocityX = -1;
-    velocityY = 0;
-  } else if (e.key === "ArrowRight" && velocityX !== -1) {
-    velocityX = 1;
-    velocityY = 0;
-  }
-};
-
-const initGame = () => {
-  if (gameOver) return handleGameOver();
-
-  let html = `<div class="food" style="grid-area: ${foodY} / ${foodX}"></div>`;
-
-  if (snakeX === foodX && snakeY === foodY) {
-    updateFoodPosition();
-    snakeBody.push([foodY, foodX]);
-    score++;
-    highScore = score >= highScore ? score : highScore;
-    localStorage.setItem("high-score", highScore);
-    scoreElement.innerText = `Score: ${score}`;
-    highScoreElement.innerText = `High Score: ${highScore}`;
-  }
-
-  snakeX += velocityX;
-  snakeY += velocityY;
-
-  for (let i = snakeBody.length - 1; i > 0; i--) {
-    snakeBody[i] = snakeBody[i - 1];
-  }
-  snakeBody[0] = [snakeX, snakeY];
-
-  if (snakeX <= 0 || snakeX > 30 || snakeY <= 0 || snakeY > 30) {
-    gameOver = true;
-  }
-
-  snakeBody.forEach((segment, index) => {
-    html += `<div class="head" style="grid-area: ${segment[1]} / ${segment[0]}"></div>`;
-    if (index !== 0 && segment[0] === snakeX && segment[1] === snakeY) {
-      gameOver = true;
-    }
-  });
-
-  playBoard.innerHTML = html;
-};
-
-const startNewGame = () => {
-  gameOver = false;
+// Hide Game Over Modal and restart the game
+function restartGame() {
+  const modal = document.getElementById('gameOverModal');
+  modal.style.display = 'none';
   score = 0;
-  level = 1;
-  snakeBody = [];
-  velocityX = 0;
-  velocityY = 0;
-  snakeX = 5;
-  snakeY = 5;
-  scoreElement.innerText = `Score: ${score}`;
-  levelElement.innerText = `Level: ${level}`;
-  updateFoodPosition();
-  clearInterval(setIntervalId);
-  setIntervalId = setInterval(initGame, gameSpeed);
-};
+  document.getElementById('score').textContent = score;
+  // Reset the game state here (e.g., snake position, sphere, etc.)
+  gameStarted = false;
+  startGame(speed); // Restart the game with the previous speed setting
+}
 
-newGameButton.addEventListener("click", startNewGame);
-restartGameButton.addEventListener("click", startNewGame);
+// Exit Game
+function exitGame() {
+  window.close(); // Close the game window (works on some browsers)
+}
 
-updateFoodPosition();
-setIntervalId = setInterval(initGame, gameSpeed);
-document.addEventListener("keyup", changeDirection);
+// Updated Game Loop (to trigger Game Over)
+function animate() {
+  if (!gameStarted) return;
+
+  setTimeout(() => {
+    requestAnimationFrame(animate);
+
+    updateDirection();
+
+    // Move snake
+    const headPosition = snake[0].position.clone();
+    headPosition.add(direction);
+
+    // Check collisions
+    if (headPosition.equals(spherePosition)) {
+      // Increase score
+      score += 10;
+      document.getElementById("score").textContent = score;
+
+      // Add new segment
+      const newSegment = new THREE.Mesh(segmentGeometry, snakeMaterial);
+      const tail = snake[snake.length - 1];
+      newSegment.position.copy(tail.position);
+      snake.push(newSegment);
+      scene.add(newSegment);
+
+      // Reposition sphere
+      spherePosition.set(
+        Math.floor(Math.random() * 20 - 10),
+        Math.floor(Math.random() * 20 - 10),
+        0
+      );
+      sphere.position.copy(spherePosition);
+    }
+
+    // Move segments
+    for (let i = snake.length - 1; i > 0; i--) {
+      snake[i].position.copy(snake[i - 1].position);
+    }
+    snake[0].position.copy(headPosition);
+
+    // Check self-collision or boundary collision
+    for (let i = 1; i < snake.length; i++) {
+      if (snake[0].position.equals(snake[i].position)) {
+        showGameOver(); // Trigger Game Over Modal
+        return;
+      }
+    }
+    if (
+      Math.abs(headPosition.x) > 25 ||
+      Math.abs(headPosition.y) > 25 ||
+      Math.abs(headPosition.z) > 25
+    ) {
+      showGameOver(); // Trigger Game Over Modal
+      return;
+    }
+
+    // Render the scene
+    renderer.render(scene, camera);
+  }, speed);
+}
