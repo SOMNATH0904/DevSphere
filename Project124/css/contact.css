@@ -1,0 +1,332 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+
+
+*{
+    margin: 0;padding: 0;
+}
+
+.wrapper {
+  height: 350px;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .inside-text,a{
+    text-decoration: none;
+    color: white;
+  }
+ 
+  .container {
+    
+    overflow-y: hidden; /* Hide horizontal scrollbar */
+    overflow-x: hidden;
+    position: absolute;
+    width: 100%;
+    height: 70vh;
+    background-image: url(../images/wallpaper.jpg);
+    background-size: cover;
+    z-index: 0;
+  }
+  
+  .overlay {
+    width: 100vw;
+    height:100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .nav-bar {
+    z-index: 10;
+    margin-top: 0;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    font-size: larger;
+    color: gray;
+  }
+  
+  .nav-bar.logo {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    gap: 10px;
+  }
+  
+  .nav-bar.ul.logo.h2 {
+    margin-left: 20px;
+    font-size: 100px;
+    gap: 10px;
+  }
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #6665655d;
+    /* margin: 0px 0px 0px 25px; */
+    padding: 35px 0px;
+  }
+  li {
+    display: inline;
+    margin-top: 15px;
+  }
+  li a {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin: 0px 0px 0px 25px;
+    padding: 35px 0px;
+    text-decoration: none;
+    z-index: 10;
+  }
+  li a:hover {
+    color: #fea116;
+    text-decoration: none;
+  }
+  
+  .logo {
+    display: flex;
+    color: #fea116;
+  }
+  
+  .logo.i {
+    display: flex;
+    background-color: #fea116;
+    z-index: 100;
+  }
+  .logo.h2 {
+    font-size: 40px;
+    padding: 0;
+    margin: 0;
+    color: #fea116;
+    z-index: 100;
+  }
+  
+  .resturant-name {
+    font-size: 50px;
+  }
+  
+  #logo-photo {
+    width: 50px;
+    color: #fea116;
+  }
+  
+  .fa-cutlery {
+    width: 100%;
+  }
+  
+  .text-upper {
+    position: absolute;
+  margin-left: 47%;
+  margin-top: 20%;
+  font-weight: bolder;
+    transform: translate(-50%, -50%);
+    font-size: 4.5em;
+    color: white;
+  }
+  
+  .booking-btn {
+    color: white;
+    background-color: #fea116;
+    
+    padding: 20px;
+    border: none;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  
+  .booking-btn:hover {
+    cursor: pointer;
+    color: #fea116;
+    background-color: white;
+    border: 3px solid #fea116;
+  }
+
+
+  /* wrapper2 css
+ */
+.cursivetext{
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 50px;
+  color: #fea116;
+  text-align: center;
+}
+.text{
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 30px;
+  color: #fea116;
+  text-align: center;
+}
+.bold-text{
+  justify-content: center;
+text-align: center;
+font-weight: 700;
+  font-style: bold;
+  font-size: 40px;
+}
+
+.threeboxes{
+  display: flex;
+  margin-top: 3%;
+  justify-content: space-around;
+}
+
+.partition{
+  margin-top: 3%;
+  display: flex;
+}
+.left-part{
+  width: 50%;
+}
+.right-part{
+  width: 50%;
+}
+
+/* form css begins here */
+.form-container {
+  margin-top: 5%;
+  width: 300px;
+  padding: 20px;
+  border-radius: 5px;
+
+}
+
+
+
+.form-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-container input[type="text"],
+.form-container textarea {
+  width: 500px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #333;
+}
+
+.form-container input[type="email"]{
+  width: 500px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #dd0606;
+}
+
+
+.form-container textarea {
+  height: 200px;
+}
+
+.form-container input[type="submit"] {
+  width: 500px;
+  padding: 10px;
+  background-color:#fea116;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-container input[type="submit"]:hover {
+  background-color:#fea116;
+}
+/* map */
+.map{
+  margin-left: 6%;
+  height: 160px;
+  width: 150px;
+  margin-top: 2%;
+}
+/* footer part begins */
+
+.footer-part{
+  width: 100%;
+  height: 40vh;
+  background-color: rgb(2, 10, 40);
+  color: white;
+display: flex;
+justify-content: space-around;
+
+}
+
+.heading-part{
+  margin: 12px;
+  padding: 15px;
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 30px;
+  color: #fea116;
+  text-align: center;
+}
+
+.inside-text{
+  display: flex;
+  flex-direction: column;
+}
+
+.social-media i{
+  width: 15px;
+}
+
+
+.login-screen {
+  display: flex;
+  align-items: center;
+}
+
+#emaill {
+  margin-right: 0px;
+  padding: 7px;
+  
+  
+}
+
+.booking-btn2{
+  color: white;
+  width: 130px;
+  background-color: #fea116;
+  padding: 7px;
+  border: none;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.booking-btn2:hover {
+  cursor: pointer;
+  color: #fea116;
+  background-color: white;
+  border: 3px solid #fea116;
+}
+
+.developedBy{
+  background-color: rgb(2, 10, 40);
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 20px;
+  color: #fea116;
+  text-align: center;
+}
+

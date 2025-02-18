@@ -1,0 +1,314 @@
+*{
+    margin: 0;padding: 0;
+}
+.wrapper {
+  height: 450px;
+  width: 100%;
+  overflow: hidden;
+}
+  
+  .container {
+    overflow-x: hidden;
+    position: absolute;
+    width: 100%;
+    height: 450px;
+    background-image: url(../images/wallpaper.jpg);
+    background-size: cover;
+    z-index: 0;
+  }
+  
+  .overlay {
+    width: 100vw;
+    height:100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .nav-bar {
+    z-index: 10;
+    margin-top: 0;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    font-size: larger;
+    color: gray;
+  }
+  
+  .nav-bar.logo {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    gap: 5px;
+  }
+  
+  .nav-bar.ul.logo.h2 {
+    margin-left: 20px;
+    font-size: 100px;
+    gap: 10px;
+  }
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: none;
+    /* margin: 0px 0px 0px 25px; */
+    padding: 19px 0px;
+  }
+  li {
+    display: inline;
+    margin-top: 15px;
+  }
+  li a {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin: 0px 0px 0px 25px;
+    padding: 35px 0px;
+    text-decoration: none;
+    z-index: 10;
+  }
+  li a:hover {
+    color: #fea116;
+    text-decoration: none;
+  }
+  
+  .logo {
+    display: flex;
+    color: #fea116;
+  }
+  
+  .logo.i {
+    display: flex;
+    background-color: #fea116;
+    z-index: 100;
+  }
+  .logo.h2 {
+    font-size: 40px;
+    padding: 0;
+    margin: 0;
+    color: #fea116;
+    z-index: 100;
+  }
+  
+  .resturant-name {
+    font-size: 50px;
+  }
+  
+  #logo-photo {
+    width: 50px;
+    color: #fea116;
+  }
+  
+  .fa-cutlery {
+    width: 100%;
+  }
+  
+  .text-upper {
+    position: absolute;
+  margin-left: 47%;
+  margin-top: 20%;
+  font-weight: bolder;
+    transform: translate(-50%, -50%);
+    font-size: 4.5em;
+    color: white;
+  }
+  
+  .booking-btn {
+    color: white;
+    background-color: #fea116;
+    border-radius: 10%;
+    padding: 20px;
+    border: none;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  
+  .booking-btn:hover {
+    cursor: pointer;
+    color: #fea116;
+    background-color: white;
+    border: 3px solid #fea116;
+  }
+  .inside-text,a{
+    text-decoration: none;
+    color: white;
+  }
+
+
+/* big container boxes css begin */
+.about-us{
+  margin-left: 0%;
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 30px;
+  color: #fea116;
+  text-align: center;
+}
+
+.explore{
+  margin-top: 1%;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 50px;
+  margin-left: 34%;
+  font-weight: 700;
+  font-style: bold;
+
+}
+
+.bigcontainer-boxes {
+  width: 100%;
+  height: 50vh;
+  background: rgb(255, 255, 255);
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-around;
+  box-sizing: border-box;
+}
+
+.firstbox,
+.secondbox,
+.thirdbox,
+.fourthbox {
+  width: 300px;
+  height: 350px;
+  background: rgb(250, 250, 250);
+  cursor: pointer;
+}
+
+.firstbox:hover,
+.secondbox:hover,
+.thirdbox:hover,
+.fourthbox:hover {
+  background-color: #fea116;
+  cursor: pointer;
+}
+
+div h5 {
+  color: black;
+  font-size: 25px;
+  font-family: sans-serif;
+  padding: 4px;
+  transition: color 0.3s ease-in-out;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+div p {
+  color: black;
+  font-size: 20px;
+  transition: color 0.3s ease-in-out;
+  overflow: hidden;
+  margin-top: 25px;
+  padding: 15px;
+}
+
+.firstbox:hover h5,
+.secondbox:hover h5,
+.thirdbox:hover h5,
+.fourthbox:hover h5 {
+  color: white;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.firstbox:hover p,
+.secondbox:hover p,
+.thirdbox:hover p,
+.fourthbox:hover p {
+  color: white;
+  overflow: hidden;
+  padding: 15px;
+  margin-top: 25px;
+}
+.firstbox i,
+.secondbox i,
+.thirdbox i,
+.fourthbox i {
+  font-size: 40px;
+  color: #fea116;
+  margin-left: 10px;
+  margin-top: 20px;
+
+  transition: color 0.3s ease-in-out;
+}
+.firstbox:hover i,
+.secondbox:hover i,
+.thirdbox:hover i,
+.fourthbox:hover i {
+  color: white;
+}
+
+/* footer part begins */
+
+.footer-part{
+  width: 100%;
+  height: 40vh;
+  background-color: rgb(2, 10, 40);
+  color: white;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.heading-part{
+  margin: 12px;
+  padding: 15px;
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 30px;
+  color: #fea116;
+  text-align: center;
+}
+
+.inside-text{
+  display: flex;
+  flex-direction: column;
+}
+
+.social-media i{
+  width: 15px;
+}
+
+
+.login-screen {
+  display: flex;
+  align-items: center;
+}
+
+#email {
+  margin-right: 0px;
+  padding: 7px;
+  width: 130px;
+  
+}
+
+.booking-btn2{
+  color: white;
+  width: 130px;
+  background-color: #fea116;
+  padding: 7px;
+  border: none;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.booking-btn2:hover {
+  cursor: pointer;
+  color: #fea116;
+  background-color: white;
+  border: 3px solid #fea116;
+}
+
+.developedBy{
+  background-color: rgb(2, 10, 40);
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 20px;
+  color: #fea116;
+  text-align: center;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, 
+						initial-scale=1.0"
+    />
+    <title>Code with RK</title>
+    <link rel="stylesheet" href="css/login_style.css" />
+    <script type="module" src="JS/register.js"></script>
+    <script type="module" src="JS/login.js"></script>
+    <script type="module" src="JS/google.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <a href="index.html"><h1 class="heading" id="clg"></h1></a>
+    </header>
+
+    <!-- container div -->
+    <div class="container">
+      <!-- upper button section to select
+			the login or signup form -->
+      <div class="slider"></div>
+      <div class="btn">
+        <button class="login">Login</button>
+        <button class="signup">Signup</button>
+      </div>
+
+      <!-- Form section that contains the
+			login and the signup form -->
+      <div class="form-section">
+        <!-- login form -->
+        <div class="login-box">
+          <input
+            type="email"
+            class="email ele"
+            placeholder="youremail@email.com"
+            id="email-login"
+          />
+          <input
+            type="password"
+            class="password ele"
+            placeholder="password"
+            id="password-login"
+          />
+          <button class="clkbtn" id="login-btn">Login</button>
+          <button type="button" class="login-with-google-btn" id="google">
+            Sign in with Google
+          </button>
+        </div>
+
+        <!-- signup form -->
+        <div class="signup-box">
+          <input type="text" class="name ele" placeholder="Enter your name" />
+          <input
+            type="email"
+            class="email ele"
+            placeholder="youremail@email.com"
+            id="email-reg"
+          />
+          <input
+            type="password"
+            class="password ele"
+            placeholder="password"
+            id="password-reg"
+          />
+          <input
+            type="password"
+            class="password ele"
+            placeholder="Confirm password"
+            id="confpass-reg"
+          />
+          <button class="clkbtn" id="signup-btn">Signup</button>
+          <button type="button" class="login-with-google-btn" id="google">
+            Sign in with Google
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="JS/login_logic.js"></script>
+  </body>
+</html>

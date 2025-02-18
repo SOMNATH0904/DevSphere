@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a table</title>
+    <link rel="stylesheet" href="./css/booktable.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="overlay"></div>
+        </div>
+
+        <div class="text-upper"> Book a table</div>
+        <div class="nav-bar">
+           
+            <ul>
+                <div class="logo">
+                    <img id="logo-photo" src="./images/utensil.png" alt="utensils">
+                    <h2 class="resturant-name">Restraunt</h2>
+                </div>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="aboutus.html">ABOUT</a></li>
+                <li><a href="services.html">SERVICE</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="contact.html"> 🛒 CART</a></li>
+                <li><a href="login_page.html" id="LOG">LOGIN</a></li>
+                <a href="booktable.html"><button class="booking-btn">BOOK A TABLE</button></a>
+                
+              </ul>
+        </div>
+    </div>
+
+<div class="main-section">
+    <div class="main-container">
+        <div class="left-part-first">
+            <img src="./images/bg2.jfif" alt="">
+        </div>
+        <div class="right-part-first">
+        <div class="form-container">
+        <form action="#" method="post">
+          <label for="firstName">First Name:</label><br>
+          <input type="text" id="firstName" name="firstName" required><br>
+        
+          <label for="lastName">Last Name:</label><br>
+          <input type="text" id="lastName" name="lastName" required><br>
+        
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" required><br>
+        
+          <label for="phone">Phone Number:</label><br>
+          <input type="tel" id="phone" name="phone" required><br>
+        
+          <label for="reservationDate">Reservation Date:</label><br>
+          <input type="date" id="reservationDate" name="reservationDate" required><br>
+        
+          <label for="guestNumber">Guest Number:</label><br>
+          <input type="number" id="guestNumber" name="guestNumber" min="1" value="1"><br>
+        
+          <input type="button" onclick="savedata()
+          alert('Thank you for your response ! we will get you shortly');
+          " id="save_btn" value="Submit">
+        </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+    <script>
+        window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.querySelector('.nav-bar ul').style.backgroundColor = '#333'; 
+  } else {
+    document.querySelector('.nav-bar ul').style.backgroundColor = '#24232346'; 
+  }
+}
+    let UserData = JSON.parse(localStorage.getItem('Data')) || [];
+    function savedata(){
+    let Fname,Lname,Email,PhoneNumber,ReservationDate,GuestNumber;
+    Fname = document.getElementById("firstName").value;
+    Lname =document.getElementById("lastName").value;
+    Email = document.getElementById("email").value;
+    PhoneNumber = document.getElementById("phone").value;
+    ReservationDate = document.getElementById("reservationDate").value;
+    GuestNumber = document.getElementById("guestNumber").value;
+    
+    
+
+    let user = {
+        FirstName : Fname,
+        LastName : Lname,
+        EmailAdd : Email,
+        Phone : PhoneNumber,
+        Reservation : ReservationDate,
+        GuesCount : GuestNumber,
+    }
+    UserData.push(user);
+    localStorage.setItem("Data" ,JSON.stringify(UserData));
+
+
+
+    
+
+
+
+    }
+
+    </script>
+</body>
+</html>

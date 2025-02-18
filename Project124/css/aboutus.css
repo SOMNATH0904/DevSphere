@@ -1,0 +1,362 @@
+*{
+    margin: 0;padding: 0;
+}
+
+.wrapper {
+  height: 450px;
+  width: 100%;
+  overflow: hidden;
+}
+  
+  .container {
+    
+    overflow-y: hidden; /* Hide horizontal scrollbar */
+    overflow-x: hidden;
+    position: absolute;
+    width: 100%;
+    height: 450px;
+    background-image: url(../images/wallpaper.jpg);
+    background-size: cover;
+    z-index: 0;
+  }
+  
+  .overlay {
+    width: 100vw;
+    height:100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .nav-bar {
+    z-index: 10;
+    margin-top: 0;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    font-size: larger;
+    color: gray;
+  }
+  
+  .nav-bar.logo {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    gap: 5px;
+  }
+  
+  .nav-bar.ul.logo.h2 {
+    margin-left: 20px;
+    font-size: 100px;
+    gap: 10px;
+  }
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: none;
+    /* margin: 0px 0px 0px 25px; */
+    padding: 19px 0px;
+  }
+  li {
+    display: inline;
+    margin-top: 15px;
+  }
+  li a {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin: 0px 0px 0px 25px;
+    padding: 35px 0px;
+    text-decoration: none;
+    z-index: 10;
+  }
+  li a:hover {
+    color: #fea116;
+    text-decoration: none;
+  }
+  
+  .logo {
+    display: flex;
+    color: #fea116;
+  }
+  
+  .logo.i {
+    display: flex;
+    background-color: #fea116;
+    z-index: 100;
+  }
+  .logo.h2 {
+    font-size: 40px;
+    padding: 0;
+    margin: 0;
+    color: #fea116;
+    z-index: 100;
+  }
+  
+  .resturant-name {
+    font-size: 50px;
+  }
+  
+  #logo-photo {
+    width: 50px;
+    color: #fea116;
+  }
+  
+  .fa-cutlery {
+    width: 100%;
+  }
+  
+  .text-upper {
+    position: absolute;
+  margin-left: 47%;
+  margin-top: 20%;
+  font-weight: bolder;
+    transform: translate(-50%, -50%);
+    font-size: 4.5em;
+    color: white;
+  }
+  
+  .booking-btn {
+    color: white;
+    background-color: #fea116;
+    border-radius: 10%;
+    padding: 20px;
+    border: none;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  
+  .booking-btn:hover {
+    cursor: pointer;
+    color: #fea116;
+    background-color: white;
+    border: 3px solid #fea116;
+  }
+
+
+  .col-container {
+    font-family: "Heebo", sans-serif;
+   width: 100vw;
+   margin-top: 4%;
+   display: flex;
+  }
+  
+.about-us{
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 50px;
+  color: #fea116;
+  text-align: center;
+}
+
+.welcome{
+  font-weight: 700;
+  font-style: bold;
+  font-size: 50px;
+  color: #000000;
+  text-align: center;
+}
+.message{
+  padding: 2%;
+ font-size: 22px;
+ font-family:'Times New Roman', Times, serif;
+}
+
+.left-part{
+  margin-left: 3%;
+  width: 50%;
+}
+.right-part{
+  justify-content: right;
+  width: 50%;
+  margin-top: 1rem;
+  margin-left: 15rem;
+}
+
+.right-part-data{
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+}
+.img-utensil{
+  height:30pxpx;
+  width: 35px;
+}
+.experience{
+  display: flex;
+  font-size: 40px;
+}
+
+.master-chef{
+  display: flex;
+  font-size: 40px;
+}
+.text-part{
+  margin-left: 35px;
+  display: flex;
+  flex-direction: column;
+}
+.text1{
+  color: gray;
+}
+.num{
+  width: 30px;
+  margin-right: 100px;
+  color: #fea116;
+  font-weight: bold;
+  font-size: 70px;
+}
+
+.booking-btn1 {
+  color: white;
+  width: 350px;
+  background-color: #fea116;
+  
+  padding: 20px;
+  border: none;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.booking-btn1:hover {
+  cursor: pointer;
+  color: #fea116;
+  background-color: white;
+  border: 3px solid #fea116;
+}
+
+/* team part css */
+.team-container{
+  margin-bottom: 5%;
+  height: 90vh;
+  width: 100%;
+}
+.our-master-chef{
+  justify-content: center;
+  font-family: "Rubik", sans-serif;
+  font-weight: bold;
+  font-size: 35px;
+  margin-left: 40%;
+  margin-bottom: 4%;
+
+
+}
+.team-introduction {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 24%;
+}
+
+.member {
+  height: 350px;
+  width: 250px;
+  padding: 2%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.8)
+  
+}
+
+.chef-img {
+  height: 250px;
+  border-radius: 50%;
+  transition: height 0.5s ease;
+}
+
+.member:hover .chef-img {
+  height: 300px;
+}
+.heading-part{
+  margin: 12px;
+  padding: 15px;
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 50px;
+  color: #fea116;
+  text-align: center;
+}
+
+/* footer part begins */
+
+.footer-part{
+  width: 100%;
+  height: 40vh;
+  background-color: rgb(2, 10, 40);
+  color: white;
+display: flex;
+justify-content: space-around;
+
+}
+
+.heading-part{
+  margin: 12px;
+  padding: 15px;
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 30px;
+  color: #fea116;
+  text-align: center;
+}
+
+.inside-text{
+  display: flex;
+  flex-direction: column;
+}
+
+.social-media i{
+  width: 15px;
+}
+
+
+.login-screen {
+  display: flex;
+  align-items: center;
+}
+
+#email {
+  margin-right: 0px;
+  padding: 7px;
+  width: 130px;  
+}
+
+.booking-btn2{
+  color: white;
+  width: 130px;
+  background-color: #fea116;
+  padding: 7px;
+  border: none;
+
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.booking-btn2:hover {
+  cursor: pointer;
+  color: #fea116;
+  background-color: white;
+  border: 3px solid #fea116;
+}
+
+.developedBy{
+  background-color: rgb(2, 10, 40);
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 20px;
+  color: #fea116;
+  text-align: center;
+}
+
+.inside-text,a{
+  text-decoration: none;
+  color: white;
+}

@@ -1,0 +1,122 @@
+.client-say{
+  cursor: pointer;
+  margin-top: 0%;
+  display: flex;
+  height: 550px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+.slide-container{
+  max-width: 1120px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  padding: 40px 0;
+}
+.overlay2{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 25px 25px 0 25px;
+  width: 100%;
+  background-color: #FEA116;
+}
+.overlay2::before,.overlay2::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: #FEA116;
+}
+.overlay2::after{
+  border-radius: 0 25px 0 0;
+  background-color: #FFF;
+}
+
+.card{
+  width: 320px;
+  border-radius: 25px;
+  border: 1px solid #FEA116;
+  background-color: #FFF;
+}
+
+.card-image{
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  padding:10px;
+  background: #FFF;
+}
+.card-image .card-img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.image-content,
+.card-content{
+padding: 10px 14px;
+display: flex;
+flex-direction: column ;
+align-items: center;
+justify-content: center;
+}
+.image-content{
+  row-gap: 5px;
+  padding: 25px 0;
+  position: relative;
+}
+
+.slide-content{
+  margin: 0 40px;
+}
+.name{
+  font-size: 24px;
+  font-weight:bolder;
+  color: #640c0c;
+}
+.description{
+  font-size: 20px;
+  font-weight: bold;
+  color: #383737;
+  text-align: center;
+}
+.button{
+  border: none;
+  font-size: 16px;
+  color: #FFF;
+  padding: 8px 16px;
+  background-color: #FEA116;
+  border-radius: 4px;
+  margin: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button:hover{
+background: #de8b0f;
+}
+
+.swiper-slide {
+  width: 320px !important;
+  height: 450px !important;
+  overflow: hidden;
+}
+.swiper-button-next,.swiper-button-prev{
+  
+  width: 97px !important;
+  margin-top: 235% !important;
+
+}
+
+.inside-text,a{
+  text-decoration: none;
+  color: wheat;
+}

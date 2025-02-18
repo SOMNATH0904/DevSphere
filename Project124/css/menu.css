@@ -1,0 +1,283 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+
+
+*{
+    margin: 0;padding: 0;
+}
+body {
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.wrapper {
+  height: 450px;
+  width: 100%;
+  overflow: hidden;
+}
+  
+  .container {
+    position: absolute;
+    width: 110%;
+    height: 450px;
+    background-image: url(../images/wallpaper.jpg);
+    background-size: cover;
+    z-index: 0;
+  }
+  
+  .overlay {
+    width: 110vw;
+    height:62vh;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .nav-bar {
+    z-index: 10;
+    margin-top: 0;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    font-size: larger;
+    color: gray;
+  }
+  
+  .nav-bar.logo {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    gap: 5px;
+  }
+  
+  .nav-bar.ul.logo.h2 {
+    margin-left: 20px;
+    font-size: 100px;
+    gap: 10px;
+  }
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: none;
+    /* margin: 0px 0px 0px 25px; */
+    padding: 19px 0px;
+  }
+  li {
+    display: inline;
+    margin-top: 15px;
+  }
+  li a {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin: 0px 0px 0px 25px;
+    padding: 35px 0px;
+    text-decoration: none;
+    z-index: 10;
+  }
+  li a:hover {
+    color: #fea116;
+    text-decoration: none;
+  }
+  
+  .logo {
+    display: flex;
+    color: #fea116;
+  }
+  
+  .logo.i {
+    display: flex;
+    background-color: #fea116;
+    z-index: 100;
+  }
+  .logo.h2 {
+    font-size: 40px;
+    padding: 0;
+    margin: 0;
+    color: #fea116;
+    z-index: 100;
+  }
+  
+  .resturant-name {
+    font-size: 50px;
+  }
+  
+  #logo-photo {
+    width: 50px;
+    color: #fea116;
+  }
+  
+  .fa-cutlery {
+    width: 100%;
+  }
+  
+  .text-upper {
+    position: absolute;
+  margin-left: 47%;
+  margin-top: 20%;
+  font-weight: bolder;
+    transform: translate(-50%, -50%);
+    font-size: 4.5em;
+    color: white;
+  }
+  
+  .booking-btn {
+    border-radius: 0%;
+    color: white;
+    background-color: #fea116;
+    padding: 20px;
+    border: none;
+    font-weight: bold;
+    font-size:1vw;
+    cursor: pointer;
+  }
+  
+  .booking-btn:hover {
+    cursor: pointer;
+    color: #fea116;
+    background-color: white;
+    border: 3px solid #fea116;
+  }
+
+
+/* menu section css begin */
+
+.heading{
+  display: block;
+  width: 100%;
+  margin-top: 7%;
+  margin-bottom: 5%;
+  padding: 15px;
+  font-family: "Cedarville Cursive", cursive;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 40px;
+  color: #fea116;
+  text-align: center;
+
+}
+
+.heading1{
+  display: block;
+  width: 100%;
+  margin-bottom: 5%;
+  padding: 15px;
+  font-family: "Cedarville Cursive", cursive;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 40px;
+  color: #fea116;
+  text-align: center;
+
+}
+.menu-bar{
+  /* width: 100%; */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+
+.box{
+  margin-top: 20%;
+  margin-left: 10%;
+  gap: 7px;
+  padding-right: 20px ;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.textpart{
+  margin-top: 5%;
+  width: 250px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 1.3vw;
+  font-weight: bold
+  ;
+}
+
+.box>img {
+  margin-top: 2%;
+  /* height: 200px;
+  width: 200px; */
+  height: 19vh;
+  width: 10vw;
+  border-radius: 10%;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  transition: width 0.6s ease, height 0.6s ease; 
+}
+
+.box>img:hover {
+  height: 210px;
+  width: 210px;
+}
+
+
+
+
+/* js part for food menu going up */
+
+
+.box {
+  width: 100px;
+  height: 100px;
+  /* background-color: blue; */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transform: translateY(100%);
+}
+
+.show {
+  opacity: 1;
+  transform: translateX(0%);
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+
+.heart{
+  width: 25px;
+}
+
+svg {
+  width: 30px;
+  height: auto;
+  fill:black;
+  transition: fill 0.3s ease; 
+  cursor: pointer; 
+  z-index: 1;
+}
+
+#my-svg{
+  position: absolute;
+  top: -55%;
+  left: 120%;
+  transform: translateX(-50%);
+}
+
+.rating{
+  width: 142%;
+}
+
+#add-to-cart{
+  height: 5vh;
+  width: 7vw;
+  color: black;
+  background-color: #fea116 ;
+  border: none;
+  border-radius: 5px;
+  
+}
+#add-to-cart:hover{
+  background-color: #0f0f0e;
+  color: white;
+
+}
