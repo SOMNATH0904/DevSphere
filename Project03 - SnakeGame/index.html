@@ -1,40 +1,273 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Advanced Snake Game</title>
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <div class="wrapper">
-      <div class="game-details">
-        <span class="score">Score: 0</span>
-        <span class="high-score">High Score: 0</span>
-        <span class="level">Level: 1</span>
-      </div>
-      <div class="play-board"></div>
-      <div class="controls">
-        <i data-key="ArrowLeft" class="fa-solid fa-arrow-left-long"></i>
-        <i data-key="ArrowUp" class="fa-solid fa-arrow-up-long"></i>
-        <i data-key="ArrowRight" class="fa-solid fa-arrow-right-long"></i>
-        <i data-key="ArrowDown" class="fa-solid fa-arrow-down-long"></i>
-      </div>
-      <div class="button-container">
-        <button class="new-game-button">New Game</button>
-        <button class="restart-game-button">Restart Game</button>
-      </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Snake Sphere Game</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: radial-gradient(circle, #000020, #09092a);
+      font-family: Arial, sans-serif;
+    }
+    canvas {
+      display: block;
+    }
+    #overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+    #overlay h1 {
+      margin-bottom: 20px;
+      font-size: 48px;
+    }
+    .difficulty-buttons button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      background: #444;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .difficulty-buttons button:hover {
+      background: #666;
+      transform: scale(1.1);
+    }
+    .difficulty-buttons button:active {
+      transform: scale(0.95);
+    }
+    .difficulty-buttons button.pulse {
+      animation: pulse 1.2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    #countdown {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.5);
+      font-size: 72px;
+      color: white;
+      z-index: 10;
+      display: none;
+      opacity: 0;
+      animation: zoomIn 1.5s forwards, floatUp 1.5s ease-in-out infinite alternate;
+    }
+    @keyframes zoomIn {
+      0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+    }
+    @keyframes floatUp {
+      0% {
+        transform: translate(-50%, -50%) scale(1) translateY(0);
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1) translateY(-20px);
+      }
+    }
+    #scoreboard {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: white;
+      font-size: 24px;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div id="overlay">
+    <h1>3D Snake Sphere Game</h1>
+    <p>Select Difficulty:</p>
+    <div class="difficulty-buttons">
+      <button onclick="startGame(200)" class="pulse">Easy</button>
+      <button onclick="startGame(100)" class="pulse">Medium</button>
+      <button onclick="startGame(50)" class="pulse">Hard</button>
     </div>
+  </div>
+  <div id="countdown"></div>
+  <div id="scoreboard">Score: <span id="score">0</span></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.152.2/three.min.js"></script>
 
-    <!-- Game Over Modal -->
-    <div id="gameOverModal" class="modal">
-      <div class="modal-content">
-        <h2>Game Over!</h2>
-        <p>Your final score is: <span id="finalScore"></span></p>
-        <button id="replayButton">Replay</button>
-      </div>
-    </div>
-  </body>
+  <script>
+    // Scene, camera, and renderer setup
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // Lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambientLight);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    directionalLight.position.set(10, 10, 10);
+    scene.add(directionalLight);
+
+    // Snake and sphere variables
+    let snake = [];
+    let snakeLength = 5;
+    const cellSize = 1;
+    let direction = new THREE.Vector3(1, 0, 0);
+    let spherePosition = new THREE.Vector3(5, 0, 0);
+    let speed = 100; // Default speed (ms per update)
+    let score = 0;
+    let gameStarted = false;
+
+    // Snake material and geometry
+    const snakeMaterial = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
+    const sphereMaterial = new THREE.MeshStandardMaterial({ color: 0xff4500 });
+    const segmentGeometry = new THREE.SphereGeometry(0.5, 16, 16);
+
+    // Initialize snake
+    for (let i = 0; i < snakeLength; i++) {
+      const segment = new THREE.Mesh(segmentGeometry, snakeMaterial);
+      segment.position.set(-i, 0, 0);
+      snake.push(segment);
+      scene.add(segment);
+    }
+
+    // Sphere (food)
+    const sphere = new THREE.Mesh(segmentGeometry, sphereMaterial);
+    sphere.position.copy(spherePosition);
+    scene.add(sphere);
+
+    // Grid plane
+    const gridHelper = new THREE.GridHelper(50, 50, 0x444444, 0x444444);
+    scene.add(gridHelper);
+
+    // Camera position
+    camera.position.set(0, 10, 15);
+    camera.lookAt(0, 0, 0);
+
+    // Keyboard controls
+    const keyState = {};
+    window.addEventListener("keydown", (e) => (keyState[e.code] = true));
+    window.addEventListener("keyup", (e) => (keyState[e.code] = false));
+
+    // Countdown function
+    function showCountdown(callback) {
+      const countdownDiv = document.getElementById("countdown");
+      let count = 3;
+      countdownDiv.style.display = "block";
+      countdownDiv.textContent = count;
+
+      const interval = setInterval(() => {
+        count--;
+        if (count === 0) {
+          countdownDiv.textContent = "Go!";
+        } else if (count < 0) {
+          clearInterval(interval);
+          countdownDiv.style.display = "none";
+          callback();
+        } else {
+          countdownDiv.textContent = count;
+        }
+      }, 1000);
+    }
+
+    // Start game
+    function startGame(selectedSpeed) {
+      speed = selectedSpeed;
+      document.getElementById("overlay").style.display = "none";
+      showCountdown(() => {
+        gameStarted = true;
+        animate();
+      });
+    }
+
+    // Movement update
+    function updateDirection() {
+      if (keyState["ArrowUp"] && direction.y === 0) direction.set(0, 1, 0);
+      if (keyState["ArrowDown"] && direction.y === 0) direction.set(0, -1, 0);
+      if (keyState["ArrowLeft"] && direction.x === 0) direction.set(-1, 0, 0);
+      if (keyState["ArrowRight"] && direction.x === 0) direction.set(1, 0, 0);
+    }
+
+    // Game loop
+    function animate() {
+      if (!gameStarted) return;
+
+      setTimeout(() => {
+        requestAnimationFrame(animate);
+
+        updateDirection();
+
+        // Move snake
+        const headPosition = snake[0].position.clone();
+        headPosition.add(direction);
+
+        // Check collisions
+        if (headPosition.equals(spherePosition)) {
+          // Increase score
+          score += 10;
+          document.getElementById("score").textContent = score;
+
+          // Add new segment
+          const newSegment = new THREE.Mesh(segmentGeometry, snakeMaterial);
+          const tail = snake[snake.length - 1];
+          newSegment.position.copy(tail.position);
+          snake.push(newSegment);
+          scene.add(newSegment);
+
+          // Reposition sphere
+          spherePosition.set(
+            Math.floor(Math.random() * 20 - 10),
+            Math.floor(Math.random() * 20 - 10),
+            0
+          );
+          sphere.position.copy(spherePosition);
+        }
+
+        // Move segments
+        for (let i = snake.length - 1; i > 0; i--) {
+          snake[i].position.copy(snake[i - 1].position);
+        }
+        snake[0].position.copy(headPosition);
+
+        // Check self-collision or boundary collision
+        for (let i = 1; i < snake.length; i++) {
+          if (snake[0].position.equals(snake[i].position)) {
+            alert(`Game Over! Your score is ${score}`);
+            location.reload();
+          }
+        }
+        if (
+          Math.abs(headPosition.x) > 25 ||
+          Math.abs(headPosition.y) > 25 ||
+          Math.abs(headPosition.z) > 25
+        ) {
+          alert(`Game Over! Your score is ${score}`);
+          location.reload();
+        }
+
+        // Render the scene
+        renderer.render(scene, camera);
+      }, speed);
+    }
+  </script>
+</body>
 </html>
