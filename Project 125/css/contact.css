@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Philosopher&family=Poppins:wght@300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+
+}
+
+:root {
+    --font-01: 'Poppins', sans-serif;
+    --font-02: 'Philosopher', sans-serif;
+
+    /* color  */
+    --global-color-0: #e41345;
+    --global-color-1: #f70077;
+    --global-color-2: #1a1a1a;
+    --global-color-3: #3e4359;
+    --global-color-4: #f7f7f7;
+    --global-color-5: #fff;
+    --global-color-6: #243673;
+    --global-color-7: #BFD1FF;
+
+}
+
+/* sectionFirst */
+
+.sectionFirst {
+    padding: 12rem 0% 15rem;
+    position: relative;
+}
+
+.sectionFirst::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: var(--global-color-2); */
+    background-image: url("../img/serviceBackGround.jpg");
+    z-index: -1;
+    opacity: .7;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.sectionFirst h1 {
+    text-align: center;
+    font-size: 5rem;
+    font-family: var(--font-02);
+}
+
+
+/* <!-- second section  --> */
+
+.FormMap {
+    display: flex;
+    padding: 4rem 5%;
+}
+
+.FormMap .map {
+    width: 70%;
+    /* border: 1px solid green; */
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-basis: 70%;
+    flex-shrink: 5;
+    width: 100%;
+
+}
+
+.FormMap .map iframe {
+    width: 100%;
+    border-radius: 7px;
+
+}
+
+.FormMap .form {
+    flex-basis: 33%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 0 12px 1px var(--global-color-6);
+    border-radius: 7px;
+    position: relative;
+    z-index: 1;
+}
+
+.FormMap .form .f-head {
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: var(--font-02);
+    color: var(--global-color-0);
+}
+
+.FormMap .form .f-para {}
+
+.FormMap .form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: .1rem;
+}
+
+.FormMap .form form input,
+.FormMap .form form select,
+.FormMap .form form textarea,
+.FormMap .form form button {
+    padding: .7rem 1rem .7rem .5rem;
+    border: none;
+    box-shadow: 0 0 1px 1px var(--global-color-6);
+    border-radius: 5px;
+    outline: none;
+}
+
+.FormMap .form form input {}
+
+::placeholder {
+    color: var(--global-color-3);
+}
+
+.FormMap .form form select {
+    color: var(--global-color-3);
+}
+
+.FormMap .form form section option {}
+
+.FormMap .form form textarea {}
+
+.FormMap .form form button {
+    padding: 17px 30px;
+    font-size: 17px;
+    text-transform: uppercase;
+    width: fit-content;
+    background-color: var(--global-color-0);
+    border: 1px solid var(--global-color-0);
+    box-shadow: none;
+    font-weight: 700;
+    color: #fff;
+    transition: all .4s ease;
+}
+
+.FormMap .form form button:hover {
+    background-color: var(--global-color-1);
+}

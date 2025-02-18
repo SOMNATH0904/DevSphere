@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Philosopher&family=Poppins:wght@300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+
+}
+
+:root {
+    --font-01: 'Poppins', sans-serif;
+    --font-02: 'Philosopher', sans-serif;
+
+    /* color  */
+    --global-color-0: #e41345;
+    --global-color-1: #f70077;
+    --global-color-2: #1a1a1a;
+    --global-color-3: #3e4359;
+    --global-color-4: #f7f7f7;
+    --global-color-5: #fff;
+    --global-color-6: #243673;
+    --global-color-7: #BFD1FF;
+
+}
+
+/* sectionFirst */
+
+.sectionFirst {
+    padding: 12rem 0% 15rem;
+}
+
+.sectionFirst::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: var(--global-color-2); */
+    background-image: url("../img/serviceBackGround.jpg");
+    z-index: -1;
+    opacity: .7;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.sectionFirst h1 {
+    text-align: center;
+    font-size: 5rem;
+    font-family: var(--font-02);
+}
+
+
+/* aboutServices */
+
+.aboutServices {
+    padding: 5rem 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.aboutServices .ser-litText {
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: var(--font-02);
+    text-align: center;
+    color: var(--global-color-1);
+}
+
+.aboutServices .ser-text {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.aboutServices .ser-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    color: #fff;
+}
+
+.aboutServices .ser-box .box {
+    position: relative;
+    top: 0;
+}
+
+.aboutServices .ser-box .box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--global-color-1);
+    z-index: 1;
+    opacity: .1;
+    transition: all .4s ease;
+    border-radius: 2%;
+
+
+}
+
+.aboutServices .ser-box .box:hover:after {
+    width: 0;
+}
+
+.aboutServices .ser-box .box .img {
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.aboutServices .ser-box .box .img img {
+    width: 100%;
+    border-radius: 2%;
+    height: 100%;
+
+}
+
+.aboutServices .ser-box .box .boxinfo {
+    position: absolute;
+    bottom: 5%;
+    left: 3%;
+    z-index: 2;
+
+}
+
+.aboutServices .ser-box .box .ser-name {
+    padding-bottom: .8rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    font-family: var(--font-02);
+
+}
+
+.aboutServices .ser-box .box .ser-discription {
+    font-family: var(--font-02);
+}
+
+/* -------DiscountSection------- */
+.DiscountSection {
+    padding: 7rem 5%;
+    margin-bottom: 4rem;
+
+}
+
+
+/* --------img slider------- */
+
+.imgslidertext {
+    /* height: 100vh; */
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+
+}
+
+.imgslidertext .imgslider {
+    width: 400px;
+    box-shadow: 0 0 18px #1a1a1a;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    border-radius: 10px;
+    padding: 18rem 0;
+    margin: 1rem;
+
+}
+
+.imgslidertext .imgslider .slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    height: 100%;
+    z-index: -1;
+    transition: all .5s ease;
+    top: 0;
+    left: 0;
+}
+
+.imgslidertext .imgslider .prev {
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    margin-left: 1rem;
+    color: wheat;
+    transition: .4s;
+    cursor: pointer;
+
+}
+
+.imgslidertext .imgslider .next {
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    margin-right: 1rem;
+    color: wheat;
+    transition: .4s;
+    cursor: pointer;
+
+}
+
+.imgslidertext .imgslider .prev:hover,
+.imgslidertext .imgslider .next:hover {
+    transform: scale(2);
+    color: var(--global-color-1);
+    transition: all 4 ease;
+
+}
+
+.imgslidertext .slideText {
+    width: 60%;
+    /* display: flex;
+    flex-direction: column;
+    gap: 1rem; */
+    overflow-y: hidden;
+    margin: 1rem;
+
+
+}
+
+.imgslidertext .slideText .st-heading {
+    color: var(--global-color-0);
+    font-size: 2.5rem;
+    font-family: var(--font-02);
+    font-weight: 0;
+}
+
+.imgslidertext .slideText .lit-text {}
+
+.imgslidertext .slideText .lit-service {
+    padding: 3rem 0 0;
+
+}
+
+.imgslidertext .slideText .lit-service .textinfo {
+    padding: 1rem 0 0;
+}
+
+.imgslidertext .slideText .lit-service .textinfo .ti-head {
+    font-family: var(--font-02);
+    color: black;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.imgslidertext .slideText .lit-service .textinfo .des {}
+
+/* footer */
+
+footer{
+    
+}

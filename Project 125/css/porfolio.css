@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Philosopher&family=Poppins:wght@300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+
+}
+
+:root {
+    --font-01: 'Poppins', sans-serif;
+    --font-02: 'Philosopher', sans-serif;
+
+    /* color  */
+    --global-color-0: #e41345;
+    --global-color-1: #f70077;
+    --global-color-2: #1a1a1a;
+    --global-color-3: #3e4359;
+    --global-color-4: #f7f7f7;
+    --global-color-5: #fff;
+    --global-color-6: #243673;
+    --global-color-7: #BFD1FF;
+
+}
+
+/* sectionFirst */
+
+.sectionFirst {
+    padding: 12rem 0% 15rem;
+}
+
+.sectionFirst::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: var(--global-color-2); */
+    background-image: url("../img/serviceBackGround.jpg");
+    z-index: -1;
+    opacity: .7;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.sectionFirst h1 {
+    text-align: center;
+    font-size: 5rem;
+    font-family: var(--font-02);
+}
+
+
+.gallery {
+    margin: 5rem 2%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.gallery .img {}
+
+/* DiscountSection */
+
+.DiscountSection {
+    padding: 5rem 5%;
+}
+
+
+/* beforeAfter  */
+.beforeAfter {
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(200px , 600px));
+    gap: 4rem  1rem;
+    padding: 5rem 2rem; 
+    justify-content: center;
+}
+
+.beforeAfter .gridBox {
+    display: flex;
+    gap: 1rem;
+
+}
+
+.beforeAfter .gridBox .box{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    
+}
+.beforeAfter .gridBox .box:nth-child(1){
+    flex-direction: column-reverse;
+}
+
+.beforeAfter .gridBox .box .img {
+    height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+    box-shadow: 0 0 17px var(--global-color-2);
+    /* padding: .5rem; */
+}
+
+.beforeAfter .gridBox .box .img img {
+    height: 100%;
+    width: 100%;
+}
+
+.beforeAfter  .gridBox  .box .text {
+    overflow-y: hidden;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.4rem;
+    font-family: var(--font-02);
+
+}
