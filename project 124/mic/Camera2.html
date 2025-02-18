@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+            #my_camera{
+             width: 700px;
+             height: 450px;
+             border: 1px solid black;
+             position: relative;
+             
+            }
+            .btn1{
+                top: 10px;
+                position: fixed;
+                margin-left: 2px;
+            }
+            .btn2{
+                top: 340px;
+                position: absolute;
+                border: 1px solid black;
+            }
+            .stack-top{
+                z-index: 9;
+                margin: 2px;
+            }
+            </style>
+    </head>
+    <body onClick="take_snapshot()">
+        <div id="results" class="btn2 stack-top"></div>
+        <div id="my_camera"></div>
+        <input type=button value="Take Snapshot" onClick="take_snapshot()" class="btn1" hidden>
+        
+       
+        
+        <!-- Script -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+        <script>
+            const speechRecognition1=window.webkitSpeechRecognition //Google Chrome 
+||
+window.SpeechRecognition;  //Firefox
+startListening1();
+function startListening1()
+{
+    const recong = new speechRecognition1();
+    recong.start();
+
+    recong.onresult =function(data)
+    {
+        handleResults1(data);
+    }
+}
+function handleResults1(data)
+{
+    let text=data.results[0][0].transcript;
+    text = text.toLowerCase();
+    console.log(text);
+
+    ProcessCommand1(text);
+}
+function ProcessCommand1(UserText)
+{   
+        if(UserText.includes("take a snap"))
+        {
+            take_snapshot();
+        }
+        else
+        {
+
+        }
+}
+
+
+// function Speak(TEXT)
+// {
+//     const utter = new SpeechSynthesisUtterance();
+
+//     utter.text = TEXT;
+
+//     window.speechSynthesis.speak(utter);
+// }
+
+</script>
+        <!-- Code to handle taking the snapshot and displaying it locally -->
+        <script language="JavaScript">
+            
+
+        // Configure a few settings and attach camera
+        Webcam.set({
+        width: 700,
+        height: 450,
+        image_format: 'jpeg',
+        jpeg_quality: 90
+        });
+        Webcam.attach( '#my_camera' );
+
+        // preload shutter audio clip
+        
+
+        function take_snapshot() {
+        var shutter = new Audio();
+        shutter.autoplay = true;
+        shutter.src = navigator.userAgent.match(/Firefox/) ? 'Shutter.mp3' : 'Shutter.mp3';
+        // play sound effect
+        shutter.play();
+
+        // take snapshot and get image data
+        Webcam.snap( function(data_uri) {
+        // display results in page
+        document.getElementById('results').innerHTML = 
+        '<img src="'+data_uri+'"/ height="100" width="150" id="imageId">';
+        console.log("Data: "+ data_uri);
+        } );
+        wipeOut();
+        }
+
+        function wipeOut()
+        {
+            setTimeout(function() {
+            document.getElementById('imageId').style.display='none';
+            }, 2*1000);
+            startListening1();
+        }
+        
+        </script>
+        <script src="./app1.js"></script>
+
+    </body>
+</html>

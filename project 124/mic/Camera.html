@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="Style1.css">
+    </head>
+    <body>
+        <!-- For camera -->
+        <div id="container1">
+            <video autoplay="true" id="videoElement">
+                
+            </video>
+        </div>
+        <input type=button value="Take Snapshot" onClick="take_snapshot()">
+        <script>
+            openCamera();
+            //Opening camera
+function openCamera()
+{
+    var video=document.getElementById("videoElement");
+    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUsermedia ||
+    navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+    if(navigator.getUserMedia)
+    {
+        navigator.getUserMedia({video:true},handleVideo,videoError);
+    }
+    function handleVideo(stream)
+    {
+        video.srcObject = stream;
+        video.play();
+    }
+    function videoError()
+    {
+
+    }
+}
+
+// preload shutter audio clip
+var shutter = new Audio();
+shutter.autoplay = true;
+shutter.src = navigator.userAgent.match(/Firefox/) ? 'Shutter.mp3' : 'Shutter.mp3';
+
+function take_snapshot() {
+// play sound effect
+shutter.play();
+
+// take snapshot and get image data
+video.snap( function(data_uri) {
+// display results in page
+document.getElementById('results').innerHTML = 
+'<img src="'+data_uri+'"/ height="50" width="50">';
+} );
+}
+
+
+        </script>
+    </body>
+</html>

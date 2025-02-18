@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>Friend list from your childhood</h1>
+        <h2>1<sup>st</sup> to 4<sup>th</sup> standard</h2>
+        <ol style="list-style-type: disc;">
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+        </ol>
+        <h2>5<sup>th</sup> to 10<sup>th</sup> standard</h2>
+        <ol style="list-style-type: disc;">
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+        </ol >
+        <h2>Diploma friends</h2>
+        <ol style="list-style-type:disc;">
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+            <li>Friend_Name</li>
+        </ol >
+        <script>
+            var array = [];
+            var friendList = document.querySelectorAll("li");
+            for(let li of friendList)
+            {
+                array.push(li.innerHTML);
+            }
+            console.log(array);
+            localStorage.setItem("array",array);
+        </script>
+    </body>
+</html>

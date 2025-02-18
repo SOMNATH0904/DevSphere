@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    background: black;
+    color: #02feff;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    min-height: 100vh;
+    position: fixed;
+}
+/* #microphoneButton{
+    background: #dbdbdb;
+    border: none;
+    outline: none;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+} */
+#microphoneButton{
+    fill: #ffffff;
+}
+#microphoneButton.Listen{
+    fill : red;
+}
+/* #microphoneButton.Listen #Mic{
+    fill: #ffffff;
+}
+#Mic{
+    height: 80%;
+} */
+#container1{
+    margin: 0px auto;
+    width: 700px;
+    height: 450px;
+    border:1px #333 solid;
+}
+#videoElement{
+    width: 700px;
+    height: 450px;
+    /* background-color: #666; */
+}
+@keyframes colour_ease {
+    0% {
+      border-color: #02feff;
+    }
+    50% {
+      border-color: rgba(2, 254, 255, 0.5);
+    }
+    100% {
+      border-color: #02feff;
+    }
+  }
+  @keyframes big_flicker {
+    0% {
+      box-shadow: 0px 0px 40px 20px rgba(150, 255, 255, 0.5), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
+    }
+    40% {
+      box-shadow: 0px 0px 40px 20px rgba(150, 255, 255, 0.5), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
+    }
+    50% {
+      box-shadow: 0px 0px 35px 17px rgba(150, 255, 255, 0.5), inset 0px 1px 50px 40px rgba(21, 211, 233, 0.3);
+    }
+    60% {
+      box-shadow: 0px 0px 40px 20px rgba(150, 255, 255, 0.5), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
+    }
+    100% {
+      box-shadow: 0px 0px 40px 20px rgba(150, 255, 255, 0.5), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
+    }
+  }
+  .big_core{
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: 10px rgba(2, 255, 255, 0.15) solid;
+    animation: big_flicker 0.2s infinite;
+
+  }

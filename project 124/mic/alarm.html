@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Clock</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <script>
+            const speechRecognition=window.webkitSpeechRecognition //Google Chrome 
+||
+window.SpeechRecognition;  //Firefox
+
+function startListening()
+{
+    const recong = new speechRecognition();
+    recong.start();
+
+    recong.onresult =function(data)
+    {
+        handleResults(data);
+    }
+}
+function handleResults(data)
+{
+    let text=data.results[0][0].transcript;
+    text = text.toLowerCase();
+    console.log(text);
+
+    ProcessCommand(text);
+}
+function ProcessCommand(UserText)
+{
+        if(UserText.includes("search on google"))
+        {
+            UserText=UserText.slice(16);
+            Speak('Searching initiated...'+UserText);
+            searchOnGoogle(UserText);
+        }
+        else if(UserText.includes("hey jarvis"))
+        {
+            UserText=UserText.slice(10);
+            Speak('Searching initiated...'+UserText);
+            searchOnGoogle(UserText);
+        }
+        else if(UserText.includes("search on youtube"))
+        {
+            UserText=UserText.slice(17);
+            Speak('Searching initiated...'+UserText);
+            searchOnYoutube(UserText);
+        }
+        else
+        {
+
+        }
+}
+function Speak(TEXT)
+{
+    const utter = new SpeechSynthesisUtterance();
+
+    utter.text = TEXT;
+
+    window.speechSynthesis.speak(utter);
+}
+    startListening();
+</script>
+
+
+        <h1>The current time is </h1>
+        <button id="alarmButton" onclick="setAlarm(this)">Set Alarm</button>
+
+
+        <div id="clock" ></div>
+        <script>
+            setInterval(displayClock, 1000);
+            function displayClock()
+            {
+                var date = new Date();
+                var hours = date.getHours();
+                var minutes = date.getMinutes();
+                var seconds = date.getSeconds();
+
+                if(hours > 12)
+                {
+                    hours = hours - 12;
+                }
+                if(hours == 0)
+                {
+                    hours = 12;
+                }
+                if(hours < 10)
+                {
+                    hours = '0' + hours;
+                }
+                if(minutes < 10)
+                {
+                    minutes = '0' + minutes;
+                }
+                if(seconds < 10)
+                {
+                    seconds = '0' + seconds;
+                }
+
+                clock.innerHTML = hours + ':' + minutes + ':' + seconds;
+            }
+        </script>
+    </body>
+</html>

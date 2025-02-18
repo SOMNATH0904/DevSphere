@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="Style1.css">
+    </head>
+    <body onload="jarvisSaysHello();">
+        <!-- <button id="microphoneButton">
+        <svg id="Mic" enable-background="new 0 0 60 100" 
+             viewBox="0 0 512 512" 
+            xmlns="http://www.w3.org/2000/svg">
+            <g>
+                <path d="m226 250h-74.521c5.053 53.224 49.997 95 104.521 95s99.469-41.776 104.522-95h-74.522v-30h75v-30h-75v-30h75v-30h-75v-30h74.878c-2.619-55.584-48.657-100-104.878-100s-102.259 44.416-104.878 100h74.878v30h-75v30h75v30h-75v30h75z"/>
+                <path d="m391 190v50c0 74.44-60.56 135-135 135s-135-60.56-135-135c0-21.449 0-26.562 0-50h-30v50c0 85.925 66.023 156.707 150 164.311v77.689h-60v30h150v-30h-60v-77.689c83.978-7.604 150-78.386 150-164.311v-50z"/>
+            </g>
+        </svg>
+        </button> -->
+        <div style="max-width: 280px;text-align:center;margin: auto;padding: 10%;margin-left: 55px;">
+            <h2>J.A.R.V.I.S</h2>
+         <svg width="210" height="210" id="jarvis-like" class="big_core" onclick="startListening()">
+           <defs>
+             <filter id="light-circle">
+               <feGaussianBlur result="blurred" in="SourceGraphic" stdDeviation="1" />
+             </filter>
+             <!-- <filter id="light-triangle">
+               <feGaussianBlur stdDeviation="2" in="SourceGraphic" result="blur2" />
+               <feComposite in="SourceAlpha" in2="offOut" operator="arithmetic" k1="1" k2="1" k3="1" k4="0" />
+             </filter> -->
+           </defs>
+           <!-- circle outer -->
+           <circle cx="105" cy="105" r="100" style="fill: transparent;stroke: #B4F6FB;stroke-width: 2; stroke-dasharray: 50, 5"></circle>
+           <circle cx="105" cy="105" r="95" style="fill: transparent;stroke: #64E6EF;stroke-width: 1.5;"></circle>
+           <!-- circle dash cool :D -->
+           <circle cx="105" cy="105" r="80" style="fill: transparent; stroke: #B4F6FB; stroke-width: 10; stroke-dasharray: 2,2.29">
+             <animateTransform attributeName="transform" attributType="XML" type="rotate" from="0 105 105" to="360 105 105" dur="10s" repeatCount="indefinite"></animateTransform>
+           </circle>
+           <circle cx="105" cy="105" r="61" transform="rotate(0 105 105)" style="fill: transparent; stroke: #B4F6FB; stroke-width: 2; stroke-dasharray: 50, 25">
+             <animateTransform attributeName="transform" attributType="XML" type="rotate" from="0 105 105" to="-360 105 105" dur="10s" repeatCount="indefinite" />
+             </animateTransform>
+           </circle>
+           <!-- circle inner -->
+           <circle cx="105" cy="105" r="50" style="fill: transparent; stroke: #64E6EF; stroke-width: 15;filter: url(#light-circle);"></circle>
+           <circle cx="105" cy="105" r="40" style="fill: transparent; stroke: #64E6EF; stroke-width: 2"></circle>
+           <!-- triangle primary -->
+           <path d="M 105 120 L 130 95 L 80 95 z" style="stroke: #B4F6FB; stroke-width:5" id="microphoneButton"></path>
+         </svg>
+         </div>
+        
+         <script src="./app1.js"></script>
+    </body>
+</html>

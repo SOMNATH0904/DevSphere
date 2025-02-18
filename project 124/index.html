@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Jarvis</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://codepen.io/FlyingEmu/pen/cjBzr.css" />
+    <link rel="stylesheet" href="Style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  </head>
+  <body onload="jarvisStartingReply()">
+    <div class="scroll">
+      <div id="leftmenu">
+        <div id="date_time">
+          <div id="date" class="semi_arc e4">
+            <div class="semi_arc_2 e4_1">
+              <div class="counterspin4"></div>
+            </div>
+            <div style="font-size: 40px; margin-top: 25px" id="dateValue"></div>
+            <div style="font-size: 25px" id="monthValue"></div>
+          </div>
+
+          <div id="time" class="arc e1">
+            <div
+              style="font-size: 23px; margin-left: -10px; margin-top: 23px"
+              id="timeValue"
+            ></div>
+            <div
+              style="font-size: 17px; margin-top: 10px"
+              id="weekDayValue"
+            ></div>
+          </div>
+        </div>
+
+        <p class="title">Performance</p>
+        <div class="hline title_underline"></div>
+
+        <span
+          class="menuitem entypo-gauge"
+          style="font-size: 30px; margin-left: 10px"
+        >
+          <p id="cpu" class="caption" style="font-size: 20px">CPU Usage: 19%</p>
+        </span>
+        <br />
+
+        <span
+          class="menuitem entypo-chart-area"
+          style="font-size: 30px; margin-left: 10px"
+        >
+          <p id="ram" class="caption" style="font-size: 20px"></p>
+        </span>
+        <br />
+
+        <span
+          class="menuitem entypo-chart-pie"
+          style="font-size: 30px; margin-left: 10px"
+        >
+          <p id="proc" class="caption" style="font-size: 20px">Processes: 73</p>
+        </span>
+
+        <p class="title">Shortcuts</p>
+        <div class="hline title_underline"></div>
+
+        <div class="menu">
+          <button class="menuitem">
+            <span class="entypo-right-open" />
+            <p class="caption" onclick="playAudio()">User</p>
+          </button>
+          <button class="menuitem">
+            <span class="entypo-right-open" />
+            <p class="caption" onclick="playAudio()">Documents</p>
+          </button>
+          <button class="menuitem">
+            <span class="entypo-right-open" />
+            <p class="caption" onclick="playAudio()">Computer</p>
+          </button>
+          <button class="menuitem">
+            <span class="entypo-right-open" />
+            <p class="caption">Control Panel</p>
+          </button>
+
+          <hr style="border-color: transparent; margin: 0" />
+          <div class="hline" style="margin-top: 5px; margin-bottom: 5px"></div>
+
+          <button class="menuitem">
+            <span class="entypo-right-open" />
+            <p class="caption">Custom Path 1</p>
+          </button>
+          <button class="menuitem">
+            <span class="entypo-right-open" />
+            <p class="caption">Custom Path 2</p>
+          </button>
+          <button class="menuitem">
+            <span class="entypo-right-open" />
+            <p class="caption">Custom Path 3</p>
+          </button>
+        </div>
+
+        <p class="title">Social</p>
+        <div class="hline title_underline"></div>
+
+        <div class="app_icon entypo-facebook-squared"></div>
+        <div class="app_icon entypo-twitter"></div>
+        <div class="app_icon entypo-gplus"></div>
+        <div class="app_icon entypo-skype"></div>
+
+        <div class="app_icon entypo-tumblr"></div>
+        <div class="app_icon entypo-pinterest"></div>
+        <div class="app_icon entypo-soundcloud"></div>
+        <div class="app_icon entypo-stumbleupon"></div>
+      </div>
+
+      <!-- Right Menu -->
+      <div id="rightmenu">
+        <p class="title" style="text-align: left; margin-left: 10px">Notes</p>
+        <div id="particle10" class="hline"></div>
+        <div id="particle11" class="hline"></div>
+        <div id="particle12" class="vline"></div>
+        <textarea id="note_input" rows="12" cols="44">
+For the maximum viewing experience, please view this pen in full screen where the code is displayed to the side of the display.
+        
+        To Complete:
+        - Right Menu (this side of the screen)
+          - Make this note restricted to 11 rows
+          - Fill in empty space below
+        - Weather widget next to date/time
+        - Place quick access taskbar down bottom
+        - Fill in space at the top</textarea
+        >
+        <div id="temperature">
+          <div id="date_time">
+            <div id="date" class="semi_arc e4">
+              <div class="semi_arc_2 e4_1">
+                <div class="counterspin4"></div>
+              </div>
+              <div
+                style="font-size: 34px; margin-top: 25px"
+                id="tempValue"
+              ></div>
+              <div style="font-size: 30px"><sup>0</sup>c</div>
+              <div style="font-size: 25px">Temp.</div>
+            </div>
+
+            <div id="time" class="arc e1">
+              <div
+                style="font-size: 23px; margin-right: 8px; margin-top: 23px"
+                id="humidityValue"
+              ></div>
+              <div style="font-size: 17px; margin-top: 10px">Humidity</div>
+            </div>
+          </div>
+        </div>
+        <!-- <div id="weather_Name" style="font-size: 15px; top: 10px;left: 200px;"></div> -->
+        <div id="time1" class="arc e1">
+          <!-- <div style="font-size: 23px; margin-left: -10px; margin-top: 23px;">23:41</div>
+          <div style="font-size: 15px; margin-left: 40px; margin-top: -30px; display: inline;">31</div>
+          <div style="font-size: 17px; margin-top: 10px;">Tuesday</div> -->
+          <div id="weatherImage" style="border-radius: 50%"></div>
+        </div>
+      </div>
+
+      <!-- Arc Reactor -->
+      <button id="microphoneButton">
+        <div id="arc_container">
+          <!-- <div id="titleBar" style="align-items: center;">
+        <div id="pointer" style="color: black;font-size: 20px;display: inline;">Hello</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div id="pointer" style="color: black;font-size: 30px;display: inline;">Hello</div>
+      </div>  -->
+
+          <div class="arc_reactor">
+            <div class="case_container">
+              <div class="e7">
+                <div class="semi_arc_3 e5_1">
+                  <div class="semi_arc_3 e5_2">
+                    <div class="semi_arc_3 e5_3">
+                      <div class="semi_arc_3 e5_4" id="mainCircle"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="core2"></div>
+              </div>
+              <ul class="marks">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </button>
+      <!-- Particles -->
+      <!-- Left Menu Particles -->
+      <canvas id="particle1" width="20" height="500"></canvas>
+      <script>
+        var canvas = document.getElementById("particle1");
+        var context = canvas.getContext("2d");
+        context.beginPath();
+        context.moveTo(0, 0);
+        context.lineTo(0, 70);
+        context.lineTo(10, 85);
+        context.lineTo(10, 135);
+        context.lineTo(0, 150);
+        context.lineTo(0, 480);
+        context.lineTo(5, 490);
+        context.lineTo(10, 490);
+        context.lineTo(20, 490);
+        context.lineTo(20, 250);
+        context.lineTo(10, 235);
+        context.lineTo(10, 185);
+        context.lineTo(20, 170);
+        context.lineTo(20, 40);
+        context.lineTo(10, 30);
+        context.lineTo(10, 20);
+        context.closePath();
+        context.lineWidth = 1;
+        context.fillStyle = "rgba(2,254,255,0.3)";
+        context.fill();
+        context.strokeStyle = "transparent";
+        context.stroke();
+      </script>
+
+      <canvas id="particle1_1" width="40" height="510"></canvas>
+      <script>
+        var canvas = document.getElementById("particle1_1");
+        var context = canvas.getContext("2d");
+        context.beginPath();
+        context.lineTo(0, 0);
+        context.lineTo(10, 15);
+        context.lineTo(10, 65);
+        context.lineTo(0, 80);
+        context.lineTo(0, 0);
+        context.closePath();
+        context.lineWidth = 1;
+        context.fillStyle = "rgba(2,254,255,0.3)";
+        context.fill();
+        context.strokeStyle = "transparent";
+        context.stroke();
+      </script>
+
+      <canvas id="particle1_2" width="40" height="510"></canvas>
+      <script>
+        var canvas = document.getElementById("particle1_2");
+        var context = canvas.getContext("2d");
+        context.beginPath();
+        context.lineTo(10, 80);
+        context.lineTo(0, 65);
+        context.lineTo(0, 15);
+        context.lineTo(10, 0);
+        context.lineTo(10, 80);
+        context.closePath();
+        context.lineWidth = 1;
+        context.fillStyle = "rgba(2,254,255,0.3)";
+        context.fill();
+        context.strokeStyle = "transparent";
+        context.stroke();
+      </script>
+
+      <div id="particle1_3">> > > ></div>
+
+      <div id="particle2">▶<br />▶<br />▶</div>
+      <div id="particle3" class="vline" />
+      <div id="particle4" class="vline" />
+      <div id="particle5" class="vline" />
+      <div id="particle6" class="vline" />
+      <div id="particle7" class="vline" />
+      <div id="particle8" class="vline" />
+      <div id="particle9" class="vline" />
+    </div>
+
+    <script>
+      // $('#date_time1').hide().delay(5000).fadeIn(400);
+      $("#date_time").hide().delay(2000).fadeIn(1000);
+      $(".title").hide().delay(3000).fadeIn(1000);
+      $("#cpu").hide().delay(4000).fadeIn(1000);
+      $("#ram").hide().delay(4500).fadeIn(1000);
+      $("#proc").hide().delay(5000).fadeIn(1000);
+      $(".caption").hide().delay(6000).fadeIn(1000);
+      $("#note_input").hide().delay(7000).fadeIn(1000);
+      $("#temperature").hide().delay(8000).fadeIn(1000);
+      $("#mainCircle").hide().delay(8000).fadeIn(1000);
+      $("#time1").hide().delay(9000).fadeIn(1000);
+
+      // function playAudio()
+      // {
+      //   var clickSound = new Audio();
+      //   clickSound.autoplay = true;
+      //   clickSound.src = navigator.userAgent.match(/Firefox/) ? 'clickSound.mp3' : 'clickSound.mp3';
+      //   // play sound effect
+      //   clickSound.play();
+      // }
+    </script>
+    <script src="./index_JS.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
