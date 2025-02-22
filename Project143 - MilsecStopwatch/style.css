@@ -1,0 +1,74 @@
+body {
+  background: linear-gradient(135deg, #1e1e2f, #2a1e3d); /* Dark gradient with purple-blue tones */
+  font-family: 'Orbitron', sans-serif; /* Futuristic font */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  align-items: center;
+}
+
+#timer {
+  font-size: 10rem; /* Slightly larger for emphasis */
+  font-weight: 700;
+  text-shadow: 0 0 15px rgba(0, 255, 224, 0.8), 0 0 30px rgba(0, 255, 224, 0.5); /* Neon cyan glow */
+  color: #00ffe0; /* Bright cyan */
+  width: 900px; /* Slightly wider */
+  text-align: center;
+  margin: 50px auto;
+  background: rgba(255, 255, 255, 0.05); /* Subtle glass-like background */
+  padding: 1rem;
+  border-radius: 20px;
+  border: 2px solid #00ffe0; /* Cyan border */
+  box-shadow: 0 0 20px rgba(0, 255, 224, 0.3);
+}
+
+#buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* More spacing between buttons */
+}
+
+button {
+  background: linear-gradient(45deg, #ff007a, #ff4da6); /* Pink-to-magenta gradient */
+  color: #fff;
+  border: none;
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding: 1.2rem 3.5rem; /* Slightly smaller padding */
+  margin: 0; /* Removed margin for gap control */
+  border-radius: 50px; /* More rounded */
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 0, 122, 0.5); /* Pink glow */
+  transition: all 0.3s ease; /* Smoother transition */
+  text-transform: uppercase; /* For a bold look */
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #00d4ff, #00ffe0); /* Cyan gradient on hover */
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.7); /* Stronger cyan glow */
+  transform: scale(1.05); /* Slight scale-up effect */
+}
+
+button[disabled] {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
+  box-shadow: none; /* Remove glow when disabled */
+  background: #3d3d4f; /* Dull gray for disabled state */
+}
+
+@media (max-width: 800px) {
+  #timer {
+    font-size: 5rem; /* Adjusted for smaller screens */
+    width: 400px;
+    padding: 0.8rem;
+  }
+
+  button {
+    font-size: 1.2rem;
+    padding: 1rem 2.5rem;
+  }
+}
