@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KFC-Sign up</title>
+
+    <link rel="stylesheet" href="../styles/signup.css" />
+
+      <!-- emailjs for OTP  -->
+      <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("8VnLYUKesp8CehjBF");
+      })();
+    </script>
+
+    <!-- favicon  -->
+    <link
+      rel="icon"
+      href="https://cdn.iconscout.com/icon/free/png-256/kfc-2-226243.png?w=128&f=avif"
+    />
+  </head>
+  <body>
+    <div class="kfc-sign-up">
+
+      <form id="form-id" method="post" action="">
+        <img
+          src="https://online.kfc.co.in/static/media/kfcLogo.492728c6.svg"
+          alt="kfc-logo"
+        />
+
+        <div class="alternative-signup">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+            alt="logo"
+          />
+          <img
+            src="https://www.iconpacks.net/icons/2/free-twitter-logo-icon-2429-thumb.png"
+            alt="twitter"
+          />
+        </div>
+
+        <div class="signup-warning username-warning">Please Enter Name</div>
+        <input type="text" placeholder="Full Name" class="username" />
+
+        <div class="signup-warning place-warning">Please Enter your place</div>
+
+        <div class="input-container">
+          <input
+            class="place-input"
+            type="text"
+            id="place"
+            placeholder="Place"
+            style="width: 103%; height: 40px"
+          />
+        </div>
+
+        <div class="signup-warning email-warning">Email id is requried</div>
+        <input type="email" class="email-input" placeholder="Email ID" />
+
+        <div class="signup-warning pass-warning">
+          Password should be 6 digits
+        </div>
+        <input type="password" placeholder="Password" id="signin-password" />
+        <div class="signup-warning confirm-warning">
+          Password is not matching.
+        </div>
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          id="confirm-password"
+        />
+
+        <input
+          class="sign-up-submit"
+          target="_blank"
+          type="submit"
+          value="Sign up"
+        />
+
+        <p class="sign-up-already-ac">
+          Already have an account?
+          <a href="login.html"> <span class="already-ac">Log in</span> </a>
+        </p>
+      </form>
+      <img
+        class="bg-img"
+        src="https://www.kfc.com.gh/assets/images/items/big_deal.jpg"
+        alt=""
+      />
+    </div>
+
+    <script src="../scripts/sign-up.js"></script>
+  </body>
+</html>
+
+<!-- <img src="https://static.toiimg.com/photo/77778120.cms" alt=""> -->
+<!-- <img src="https://png.pngtree.com/png-clipart/20220113/ourlarge/pngtree-hand-drawn-cartoon-kfc-fries-png-image_4289545.png" alt=""> -->
+<!-- <img src="https://www.toonpool.com/user/173/files/fastfood_1554755.jpg" alt=""> -->

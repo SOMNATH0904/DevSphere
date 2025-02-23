@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    height: auto;
+}
+
+.logo-head{
+margin-right: 45%;
+margin-left: 48%;
+width: 90px;
+}
+
+.Otp-Container {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 25%;
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.Otp-Container img {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.Otp-Container h2 {
+    margin-bottom: 10px;
+}
+
+.Get-OTP {
+    color: coral;
+}
+
+.User-Input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.User-Input>input {
+    font-size: 1rem;
+    width: 35px;
+    height: 30px;
+    margin: 20px;
+    text-align: center;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.Resend-Otp {
+    color: coral;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.Verify-button {
+    text-align: center;
+    width: 75%;
+    padding: 10px;
+    background-color: royalblue;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: 10px;
+
+}

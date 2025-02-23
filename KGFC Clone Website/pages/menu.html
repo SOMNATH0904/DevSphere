@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- outside-css-links  -->
+    <link rel="stylesheet" href="../components/navbar/navbar.css" />
+    <link rel="stylesheet" href="../components/footer/footer.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap");
+    </style>
+    <link
+      rel="icon"
+      href="https://cdn.iconscout.com/icon/free/png-256/kfc-2-226243.png?w=128&f=avif"
+    />
+    <!-- menu-page-css links -->
+    <link rel="stylesheet" href="../styles/menu.css" />
+    <title>Menu</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <!-- Append Navbar Here -->
+    </div>
+
+    <div class="cart-count">0</div>
+    <div id="order-banner">
+      LET'S ORDER FOR DELIVERY, PICK UP, OR DINE-IN
+      <button class="btn_order">Start Order</button>
+    </div>
+    <div id="menupage-body">
+      <div id="menu-items">
+        <img
+          src="https://online.kfc.co.in/static/media/Stripes_Small_OffersIcon.87fc6256.svg"
+          alt=""
+        />
+        <h1>KFC Menu</h1>
+        <ul>
+          <li><a href="#EXCLUSIVE">EXCLUSIVE DEAL</a></li>
+          <li><a href="#CHIZZA">CHIZZA</a></li>
+          <li><a href="#CHICKEN">CHICKEN BUCKETS</a></li>
+          <li><a href="#NEW">NEW LAUNCH</a></li>
+          <li><a href="#BIRYANI">BIRYANI BUCKETS</a></li>
+          <li><a href="#BOX">BOX MEALS</a></li>
+          <li><a href="#BURGERS">BURGERS</a></li>
+          <li><a href="#SNACKS">SNACKS</a></li>
+          <li><a href="#BEVERAGES">BEVERAGES</a></li>
+        </ul>
+      </div>
+      <div id="product-items">
+        <div id="ssf">
+          <div class="search-box">
+            <button>
+              <img
+                id="btn-search"
+                src="	https://online.kfc.co.in/static/media/searchIcon.0e00b33c.svg"
+                alt=""
+              />
+              <input
+                type="textbox"
+                id="search-value"
+                placeholder="Search our menu..."
+              />
+              <img
+                id="clear-search"
+                src="https://online.kfc.co.in/static/media/Darkclosebutton.b4eeaeca.svg"
+                alt=""
+              />
+            </button>
+          </div>
+          <div class="sorting-box">
+            <select name="sortbyprice" id="sortby-price">
+              <option value="null">Sort By Price--</option>
+              <option value="l2h">Low To High</option>
+              <option value="h2l">High To low</option>
+            </select>
+          </div>
+          <div class="filter-box">
+            <select name="filterbyVeg" id="filterby-veg">
+              <option value="null">Filter By--</option>
+              <option value="veg">Veg</option>
+              <option value="nonveg">Non-Veg</option>
+            </select>
+          </div>
+        </div>
+        <div class="query-results"></div>
+        <div id="query-div">
+          <div id="EXCLUSIVE">
+            <h2>EXCLUSIVE DEAL</h2>
+            <div class="menu-card">
+              <div>
+                <img
+                  id="exc-img"
+                  src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002228.jpg?ver=25.08"
+                  alt=""
+                />
+              </div>
+              <div class="menu_card_details">
+                <div class="menu_card_title">The Allu Arjun Combo</div>
+                <div>
+                  <span
+                    ><img
+                      src="	https://online.kfc.co.in/static/media/Non_veg_dot_Icon.d975d1f9.svg"
+                      alt=""
+                    />
+                  </span>
+                  <span>Non veg</span>
+                  <span class="dot"></span>
+                  <span>Serves 2</span>
+                </div>
+                <div>
+                  <span class="strikoff_price">₹523.00</span>
+                  <span class="price">₹448.57</span>
+                </div>
+                <div>
+                  Try Allus fav-1 Hot & Crispy Chicken,1 Smoky Red, Reg Popcorn,
+                  Spicy Fries & 1 Dip 20gm
+                </div>
+              </div>
+              <div>
+                <button id="btn-Addtocart">
+                  Add To Cart
+                  <img
+                    src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg"
+                    alt=""
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- --------------------------------------------------CHIZZA-------------------------------------- -->
+          <div id="CHIZZA">
+            <div>
+              <h1 class="card_header_title">CHIZZA</h1>
+            </div>
+            <div class="card_container">
+              <!-- Append CHIZZA Here -->
+            </div>
+          </div>
+          <!-- --------------------------------------------------CHICKEN BUCKETS-------------------------------------- -->
+          <div id="CHICKEN">
+            <div>
+              <h1 class="card_header_title">CHICKEN BUCKETS</h1>
+            </div>
+            <div class="card_container">
+              <!-- Append CHIZZA Here -->
+            </div>
+          </div>
+          <!-- --------------------------------------------------NEW LAUNCH-------------------------------------- -->
+          <div id="NEW">
+            <div>
+              <h1 class="card_header_title">NEW LAUNCH</h1>
+            </div>
+            <div class="card_container">
+              <!-- Append CHIZZA Here -->
+            </div>
+          </div>
+          <!-- --------------------------------------------------BIRYANI BUCKETS-------------------------------------- -->
+          <div id="BIRYANI">
+            <div>
+              <h1 class="card_header_title">BIRYANI BUCKETS</h1>
+            </div>
+            <div class="card_container">
+              <!-- Append CHIZZA Here -->
+            </div>
+          </div>
+          <!-- --------------------------------------------------BOX MEALS-------------------------------------- -->
+          <div id="BOX">
+            <div>
+              <h1 class="card_header_title">BOX MEALS</h1>
+            </div>
+            <div class="card_container">
+              <!-- Append CHIZZA Here -->
+            </div>
+          </div>
+          <!-- --------------------------------------------------BURGERS-------------------------------------- -->
+          <div id="BURGERS">
+            <div>
+              <h1 class="card_header_title">BURGERS</h1>
+            </div>
+            <div class="card_container">
+              <!-- Append CHIZZA Here -->
+            </div>
+          </div>
+          <!-- --------------------------------------------------SNACKS-------------------------------------- -->
+          <div id="SNACKS">
+            <div>
+              <h1 class="card_header_title">SNACKS</h1>
+            </div>
+            <div class="card_container">
+              <!-- Append CHIZZA Here -->
+            </div>
+          </div>
+          <!-- --------------------------------------------------BEVERAGES-------------------------------------- -->
+          <div id="BEVERAGES">
+            <div>
+              <h1 class="card_header_title">BEVERAGES</h1>
+            </div>
+            <div class="card_container">
+              <!-- Append CHIZZA Here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer importing  -->
+    <div class="footer-div"></div>
+  </body>
+  <script type="module" src="../scripts/menu.js"></script>
+</html>

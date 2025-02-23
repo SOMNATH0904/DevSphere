@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- favicon  -->
+    <link
+      rel="icon"
+      href="https://cdn.iconscout.com/icon/free/png-256/kfc-2-226243.png?w=128&f=avif"
+    />
+
+    <link rel="stylesheet" href="../styles/address-page.css" />
+    <title>KFC-Address Page</title>
+  </head>
+  <body>
+    <div>
+      <img
+        src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/847c5b111917373.600aab3cc72b6.jpg"
+        alt="img"
+      />
+      <div class="address-box">
+        <h1>Delivery Address</h1>
+        <div class="gmap_canvas">
+          <iframe
+            id="gmap_canvas"
+            src="https://maps.google.com/maps?q=masai%20school&t=&z=10&ie=UTF8&iwloc=&output=embed"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+          ></iframe
+          ><a href="https://123movies-to.org">123 movies</a><br />
+          <a href="https://www.embedgooglemap.net"
+            >put google maps on your website</a
+          >
+        </div>
+
+        <div class="input-container">
+            <div class="warning-msg city-warn"> Please Enter Valid City Name </div>
+            <input class="input-box" id="city-name" type="text" placeholder="City Name" />
+            
+            <div class="warning-msg address-warn"> Please Enter Valid Address </div>
+            
+            <input type="text" id="delivery-address" placeholder="Delivery Address" class="input-box" />
+            <div class="warning-msg phonenumber-warn"> 10 digit Phone Number required </div>
+            
+            <input type="number" id="phonenumber" placeholder="Phone Number" class="input-box" />
+            <div class="warning-msg zip-warn"> Zip Code Should be 6 Digit</div>
+            
+            <input type="number" id="zip-code" placeholder="Zipcode" class="input-box" />
+            
+            <input type="submit" id="submit-btn" class="input-box" value="Confirm Address" />
+
+        </div> 
+
+      </div>
+    </div>
+
+    <script src="../scripts/address-page.js"></script>
+  </body>
+</html>

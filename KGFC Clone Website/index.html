@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KFC- Its finger lickin' good</title>
+
+    <link rel="stylesheet" href="./styles/home-page.css" />
+    <link rel="stylesheet" href="./components//navbar/navbar.css" />
+
+    <!-- favicon  -->
+    <!-- favicon  -->
+    <link
+      rel="icon"
+      href="https://cdn.iconscout.com/icon/free/png-256/kfc-2-226243.png?w=128&f=avif"
+    />
+
+    <!-- google icon  -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
+    <div id="loader"></div>
+    <!-- navbar -->
+    <nav class="navbar"></nav>
+    <div class="cart-count"></div>
+
+    <div class="start-order-div">
+      <p>LET'S ORDER FOR DELIVERY, PICK UP, OR DINE-IN</p>
+      <button class="start-order-btn">Start Order</button>
+    </div>
+    <!-- delivery options  -->
+    <div class="delivery-options-container">
+      <div class="delivery-option-head">
+        START YOUR ORDER
+        <button class="close-delivery-btn">
+          <span class="material-symbols-outlined"> close </span>
+        </button>
+      </div>
+      <div class="delivery-option-description">
+        <h1>
+          LET'S GET STARTED. WOULD <br />
+          YOU LIKE PICKUP OR <br />
+          DELIVERY?
+        </h1>
+        <p>Menu availability and pricing may vary between order types.</p>
+      </div>
+
+      <div class="or-div">OR</div>
+
+      <div class="delivery-image">
+        <div class="delivery-img-left">
+          <img src="./components/Images/delivery-bag.svg" alt="bag" />
+          <button class="quick-pick-btn">QUICK PICK UP</button>
+        </div>
+
+        <div class="delivery-img-right">
+          <img src="./components/Images/delivery-car.svg" alt="car" />
+          <button class="delivery-btn">DELIVERY</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gif section -->
+    <div class="gif-div">
+      <div>
+        <p>THE NEW KFC APP IS HERE</p>
+        <h2 class="overlay-text">HOME COOKIN' HAS A NEW HOME</h2>
+      </div>
+      <div>
+        <video
+          loop
+          playsinline
+          autoplay
+          muted
+          src="./components/Images/AppVideo.mp4"
+        >
+          <source src="./components/Images/AppVideo.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+    <div class="empty-div"></div>
+
+    <!--image slider start-->
+    <div class="slider">
+      <div class="img">
+        <img
+          src="https://images.ctfassets.net/wtodlh47qxpt/3Q9nVrzAkO9gXkxk2OqKFS/c4077fb9cd4da6918f5363959a69e53b/Chizza_Banner_1440x396_delviery.jpg?w=1366&fit=fill&fm=webp"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <!-- Heading div -->
+    <div class="heading">
+      <img
+        class="redline1"
+        src="https://images.ctfassets.net/wtodlh47qxpt/E2WVSq4FOeSCRAGy6LZZa/11c68fb3611baabb79e0ae892338098d/3_Strips.png"
+        alt=""
+      />
+      <p class="msg">WELCOME <span> TO KFC!</span></p>
+      <a class="account-nav" href=""></a>
+    </div>
+
+    <!-- Categories section -->
+    <div class="cat-main">
+      <h3>BROWSE CATGORIES</h3>
+      <hr />
+      <div class="disp-catg"></div>
+    </div>
+
+    <!-- middle section -->
+    <div class="mid-div">
+      <div class="mid-head">
+        <h2 class="mid-h1">
+          FINGER LICKIN' GOOD® IS NOW JUST A FEW CLICKS AWAY
+        </h2>
+        <button class="order-btn"><a href="">Start Order</a></button>
+      </div>
+      <div class="mid-gradient">
+        <div class="column1"></div>
+        <div class="column2"></div>
+        <div class="column3"></div>
+      </div>
+      <h4>OUR FOOD</h4>
+      <h1>WE MAKE IT THE</h1>
+      <h1>HARD WAY</h1>
+      <p>See what goes into making our world famous fried chicken.</p>
+      <div class="learnmore-btn">
+        <button><a href="">Learn More</a></button>
+      </div>
+      <div class="mid-imgs">
+        <img
+          class="mid-img1"
+          src="https://images.ctfassets.net/9tka4b3550oc/pUxlFVRTxLtL5kOkls4oR/79e616624a7269fa05b88538b8d5f305/herbs-badge.png"
+          alt=""
+        />
+        <img
+          class="mid-img2"
+          src="https://images.ctfassets.net/9tka4b3550oc/1FQSRLVXt2Q1lvXXkOyW6U/f306561ef7bfc5ab7c84a739a46d3629/Food_09.png?q=75&w=1280"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <!-- bottom section -->
+    <div class="bot-div">
+      <div class="bot-gradient">
+        <div class="column4"></div>
+        <div class="column5"></div>
+        <div class="column6"></div>
+      </div>
+      <div class="bot-des">
+        <h2>
+          UNLOCK MORE FINGER LICKIN' GOOD <br />
+          BENEFITS
+        </h2>
+        <h5>
+          Create an account to get access to exclusive deals and faster
+          checkout.
+        </h5>
+      </div>
+      <div class="bot-img">
+        <img src="./components/Images/man.svg" alt="" />
+      </div>
+    </div>
+
+    <!-- Footer section -->
+    <div class="footer-div"></div>
+  </body>
+  <script src="./scripts/home-page.js" type="module"></script>
+</html>

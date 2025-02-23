@@ -1,0 +1,98 @@
+body{
+    margin: 0;
+}
+
+.navbar{
+    position:fixed;
+    display: flex;
+    justify-content: space-between;   
+    background-color: white;
+    width: 100%;
+    padding: 25px 11% 25px 6%;
+    box-sizing: border-box;
+    height: 103px;
+    font-family: sans-serif;
+    font-weight: 550;
+    z-index: 10;
+    font-size: .85rem;
+    margin-bottom: 100px;
+    top: 0;   
+}
+
+.nav-checkbtn{
+    display: none;
+}
+
+.navbar *{
+    cursor: pointer;
+}
+
+.navbar-left{
+    display: flex;
+    height: 52px;
+    justify-content: space-around;
+    align-items: center;
+    width: 35%;
+}
+
+.navbar-left *{
+    margin: 0;
+}
+.navbar-left>img{
+    width:65px;
+}
+
+.navbar-right{
+    display: flex;
+    width: 20%;
+    justify-content: space-around;
+    align-items: center;   
+}
+.navbar-right *{
+    margin: 0;
+}
+
+.man-icon{
+    width: 10%;
+}
+
+.navbar-right>img:last-child{
+    width: 50px;
+}
+
+.account{
+    border-right: 1px solid rgb(175, 175, 175);
+    padding-right: 10px;
+    height: 17px;
+}
+
+.sample-body{
+    width: 100%;
+    position: relative;
+    margin-top: 100px;
+}
+
+
+@media screen and (max-width: 800px){
+   
+    .nav-checkbtn {
+        display: block;
+    }
+
+    .hide-item{
+        display: none;
+    }
+    .navbar-right>img:last-child{
+        width: 40px;
+    }
+
+    .navbar-left{
+        justify-content: space-between;
+        align-items: center;
+        width: 56%;
+    }
+
+    .navbar-left>img{
+        width: 60px;
+    }
+}

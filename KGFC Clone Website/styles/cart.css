@@ -1,0 +1,311 @@
+@import url(//db.onlinewebfonts.com/c/7de69a716652a3d82e8e7099fa1ec6a2?family=National+2+Condensed);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  height: auto;
+}
+
+/* ! NavBar Section */
+.navbar {
+  height: 100px;
+}
+
+/* cart count  */
+.cart-count {
+  width: 12px;
+  height: 20px;
+  position: fixed;
+  z-index: 1200;
+  left: 86.5%;
+  top: 44px;
+  font-weight: 700;
+}
+
+.head-logo {
+  border-style: none;
+  width: 200px;
+}
+
+.start-order-div {
+  height: 68px;
+  width: 100%;
+  background-color: #202124;
+  position: relative;
+  top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.start-order-div > p {
+  color: white;
+  font-family: "National 2 Condensed", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 1.1px;
+}
+
+.start-order-div > button {
+  background-color: red;
+  width: 13%;
+  height: 50px;
+  border-radius: 29px;
+  margin-left: 20px;
+  font-size: 1rem;
+  color: white;
+}
+
+.cart-header {
+  position: relative;
+  top: 100px;
+  height: 87px;
+  padding-left: 111px;
+  font-family: "National 2 Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+  box-sizing: border-box;
+}
+
+/* cart container  */
+.cart-container {
+  width: 60%;
+  height: auto;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  position: relative;
+  top: 200px;
+  left: 116px;
+  padding: 15px 20px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+.cart-item {
+  width: 96%;
+  height: 123px;
+  margin: auto;
+  padding: 5px 1%;
+  background-color: #f8f7f5;
+  display: flex;
+  margin-top: 20px;
+}
+
+.cart-item > img {
+  width: 21%;
+  height: 112px;
+  position: relative;
+}
+
+.right-side {
+  margin-left: 20px;
+  width: 80%;
+  display: flex;
+}
+
+.right-side > div:first-child {
+  width: 40%;
+}
+
+.right-side > div p {
+  margin-top: 25px;
+}
+
+.qty-increment,
+.qty-decrement {
+  cursor: pointer;
+}
+
+.price-div {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+}
+
+/* qty div  */
+.qty-div {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+  width: 23%;
+  padding: 5px 5%;
+}
+.qty-div * {
+  margin: 0;
+}
+
+#circle-min {
+  margin-top: 1px;
+  font-size: 1.3rem;
+}
+
+.qty-count {
+  font-size: 1.2rem;
+}
+
+.remove-btn {
+  background-color: black;
+  color: white;
+  height: 32px;
+  border-radius: 16px;
+  width: 16%;
+  position: relative;
+  top: 41px;
+  left: 35px;
+  cursor: pointer;
+}
+
+.item-des {
+  font-size: 13px;
+}
+
+/* checkout form  */
+.checkout-form {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 26%;
+  height: 480px;
+  position: fixed;
+  top: 200px;
+  left: 1021px;
+  border-radius: 10px;
+  padding: 20px 2%;
+  margin-left: 30px;
+}
+
+.cart-offer-container > div {
+  position: relative;
+  top: 20px;
+  color: red;
+  background-color: #eee;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* border-radius: 10px; */
+}
+
+.cart-offer-container-2 {
+  position: relative;
+  /* z-index: -1; */
+  top: 20px;
+  color: red;
+  background-color: #eee;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#get-coupon-value {
+  border: none;
+  border-bottom: 1px solid green;
+  background-color: #eeeeee;
+  padding: 5px;
+}
+
+#get-coupon-value:focus {
+  background-color: #202124;
+  color: white;
+  font-size: 1rem;
+}
+
+#btn-coupon-apply {
+  border: none;
+  border-radius: 9px;
+  width: 25%;
+  height: 24px;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+}
+
+.cart-offer-container button {
+  border-radius: 9px;
+  width: 25%;
+  height: 24px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.gst-div {
+  height: 100px;
+  position: relative;
+  top: 50px;
+  border-bottom: 1px solid rgb(199, 199, 199);
+}
+
+.gst-div > div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.donation-box {
+  position: relative;
+  top: 80px;
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgb(199, 199, 199);
+  padding-bottom: 16px;
+}
+
+.donation-box > div:first-child {
+  display: grid;
+  grid-template-columns: 0.8fr 7fr;
+}
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.donation-box > div:last-child {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 0.2fr 1fr;
+}
+
+.donation-box p {
+  margin-left: 15px;
+}
+
+.checkout-btn {
+  background-color: red;
+  height: 50px;
+  width: 71%;
+  position: relative;
+  top: 104px;
+  border: none;
+  border-radius: 28px;
+  margin: auto;
+  display: block;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.footer-div {
+  margin-top: 600px;
+  position: relative;
+  top: 200px;
+}
+
+.cart-item {
+  transition: 0.5s;
+}
+
+.cart-item img:hover {
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid orange;
+}
+
+.fa-wand-magic-sparkles {
+  color: green;
+}
+
+.cart-offer-container #btn-coupon-apply-div,
+#btn-coupon-try-div,
+#success-coupon {
+  display: none;
+}

@@ -1,0 +1,104 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+    color: white;
+}
+
+.address-box {
+    width: 31%;
+    height: 670px;
+    top: 55%;
+    background-color: transparent;
+    position: absolute;
+    left: 5%;
+    border-radius: 11px;
+    padding: 20px 1%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr;
+    box-shadow: rgba(255, 255, 255, 0.24) 0px 5px 10px;
+}
+
+.input-container{
+    display: grid;
+    width: 100%;
+    height: 301px;
+    position: relative;
+    top: 16px;
+}
+
+.input-box{
+    height: 33px;
+    padding-left: 10px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+    letter-spacing:1.5px;
+}
+
+.input-box:focus{
+    outline: none;
+}
+
+::placeholder {
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+
+  .warning-msg{
+    color: red;
+    position: relative;
+    left: 10px;
+    font-family: sans-serif;
+    font-size: .8rem;
+    display:none;
+  }
+
+  .display-block{
+    display: block;
+  }
+  
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+input[type="submit"]{
+    background-color: black;
+    color: white;
+    height: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+
+/* map  */
+
+/* inbuilt map syles  */
+.mapouter {
+    position: relative;
+    text-align: right;
+    height: 250px;
+    width: 100%;
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+  .gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 250px;
+    width: 100%;
+  }
+  
+  #gmap_canvas {
+    width: 600;
+    height: 500;
+  }
+  

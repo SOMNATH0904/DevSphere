@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <script src="https://kit.fontawesome.com/f5d1d49e73.js" crossorigin="anonymous"></script>
+    <style>
+        .order-container{
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            width:45%;
+            padding: 30px;
+            margin: auto;
+            height: 650px;
+            border-radius: 20px;
+        }
+       .inner-body{
+        display: flex;
+        justify-content: space-between;
+       }
+       .fa-xmark{
+        font-size: 40px;
+        padding: 10px;
+        cursor: pointer;
+       }
+       .form-order{
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        border-radius: 5px;
+        padding: 30px;
+        background-color: #f8f7f5;
+        height: 500px;
+       }
+       input{
+        margin-bottom:20px;
+       }
+       .phone{
+        width: 90%;
+        height: 40px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        border: none;
+        border-radius:5px;
+        padding: 5px;
+        font-size:25px;
+       }
+       .order-number{
+        width: 90%;
+        height: 40px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        border: none;
+        border-radius:5px;
+        padding: 5px;
+        font-size:25px;
+       }
+       .email{
+        width: 90%;
+        height: 40px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        border: none;
+        border-radius:5px;
+        padding: 5px;
+        font-size:25px;
+       }
+       .contain-btn{
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap:50px;
+       }
+       .btn{
+        padding: 15px;
+        width: 200px;
+        border-radius: 10px;
+        margin-bottom: 50px;
+       }
+    </style>
+</head>
+<body>
+    <div class="order-container">
+        <div class="inner-body">
+        <h1>ORDER LOOKUP</h1>
+        <i class="fa-sharp fa-solid fa-xmark"></i>
+    </div>
+        <form class="form-order">
+            <p>Note * Indicates required field</p>
+
+            <h1>ENTER YOUR ORDER NUMBER</h1>
+            <input type="text" maxlength="10" placeholder="Phone Number*" class="phone" required>
+            <input type="text" maxlength="10" placeholder="Order Number*" class="order-number" required>
+            <input type="email" maxlength="30" placeholder="Email Address*" class="email" required>
+          
+            <div class="contain-btn">
+                <button class="btn" onclick="btn1()">Cancel</button>
+                <button class="btn">Submit</button>
+            </div>
+        </form>
+       
+    </div>
+</body>
+</html>
+<script>
+    document.querySelector(".fa-xmark").addEventListener("click",Myfun);
+    function Myfun(){
+       window.location.href="profile.html";
+    }
+    document.querySelector(".btn1").addEventListener("click",Myfun1);
+    function Myfun1(){
+       window.location.href="profile.html";
+    }
+</script>

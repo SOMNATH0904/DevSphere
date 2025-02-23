@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KFC</title>
+
+    <!-- css  -->
+    <link rel="stylesheet" href="../styles/details-page.css" />
+    <link rel="stylesheet" href="../components//navbar/navbar.css" />
+    <link rel="stylesheet" href="../components/footer/footer.css">
+    <!-- favicon  -->
+    <link
+      rel="icon"
+      href="https://cdn.iconscout.com/icon/free/png-256/kfc-2-226243.png?w=128&f=avif"
+    />
+
+    <!-- font awesome  -->
+    <script
+      src="https://kit.fontawesome.com/b78a585d56.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- google font  -->
+    <link
+      href="//db.onlinewebfonts.com/c/7de69a716652a3d82e8e7099fa1ec6a2?family=National+2+Condensed"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- google icon  -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
+    <div id="loader"></div>
+    
+    <nav class="navbar"></nav>
+    <div class="cart-count"> 0</div>
+    
+    <div class="image-container">
+      <img
+        class="food-img"
+        src="	https://digitaleat.kfc.com/menus/image/bare/kfc-PotPieMeal?q=75&w=1280"
+        alt="food-img"
+      />
+
+      <div class="product-data-box">
+        <img
+          src="https://images.ctfassets.net/wtodlh47qxpt/E2WVSq4FOeSCRAGy6LZZa/11c68fb3611baabb79e0ae892338098d/3_Strips.png"
+          alt="banner"
+        />
+        <h1 class="box-title">POT PIE MEAL</h1>
+
+        <div class="product-details-page">
+          <p class="des">
+            Grab the perfect homestyle comfort food at a KFC® near you with our
+            Chicken...
+          </p>
+          <p class="box-price">Price: ₹ 320</p>
+        </div>
+        <div class="side-dish">
+          <p>
+            <span class="side-item"> Side: Mashed Potatoes & Gravy </span>
+            <span class="material-symbols-outlined"> fastfood </span>
+          </p>
+          <p class="bev-p">
+            <span class="beverage-item"> Beverage: Pepsi </span>
+            <span class="material-symbols-outlined"> nightlife </span>
+          </p>
+        </div>
+        
+        <div>
+          <div class="qty-div">
+            <p>Quantity</p>
+            <div>
+              <span class="material-symbols-outlined qty-increment">
+                add_circle
+              </span>
+              <span class="qty-count"> </span>
+
+              <i id="circle-min" class="fa fa-circle-minus qty-decrement"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="pick-store-btn">
+          <button class="buy-btn">Pick Store For Price</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- side dish container  -->
+
+    <h2 class="side-head1">SELECT A SIDE</h2>
+    <div class="side-dish-1"></div>
+
+    <h2 class="beverage-head">SELECT A BEVERGAE</h2>
+    <div class="beverage-container">
+      <div class="beverage-card">
+        <img
+          class="beverage-card-img"
+          src="https://digitaleat.kfc.com/menus/image/bare/kfc-IndFries"
+          alt="side-dish"
+        />
+        <p>Secret Receipe</p>
+      </div>
+    </div>
+
+    <div class="delivery-options-container">
+      <div class="delivery-option-head">
+        START YOUR ORDER
+        <button class="close-delivery-btn">
+          <span class="material-symbols-outlined"> close </span>
+        </button>
+      </div>
+      <div class="delivery-option-description">
+        <h1>
+          LET'S GET STARTED. WOULD <br />
+          YOU LIKE PICKUP OR <br />
+          DELIVERY?
+        </h1>
+        <p>Menu availability and pricing may vary between order types.</p>
+      </div>
+
+      <div class="or-div">OR</div>
+
+      <div class="delivery-image">
+        <div class="delivery-img-left">
+          <img src="../components/Images/delivery-bag.svg" alt="bag" />
+          <button class="quick-pick-btn">QUICK PICK UP</button>
+        </div>
+
+        <div class="delivery-img-right">
+          <img src="../components/Images/delivery-car.svg" alt="car" />
+          <button class="delivery-btn">DELIVERY</button>
+        </div>
+      </div>
+    </div>
+
+      <!-- footer importing  -->
+      <div class="footer-div">
+        
+      </div>
+
+    <script type="module" src="../scripts/details-page.js"></script>
+  </body>
+</html>

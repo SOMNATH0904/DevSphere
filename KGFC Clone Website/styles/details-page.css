@@ -1,0 +1,407 @@
+@import url(//db.onlinewebfonts.com/c/7de69a716652a3d82e8e7099fa1ec6a2?family=National+2+Condensed);
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  height: 2000px;
+}
+
+/* preloader  */
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    overflow: hidden;
+    background: #fff url("https://jolly-hawking-c11904.netlify.app/images/KFC_Loader_Gif.gif") no-repeat center center;
+}
+
+/* cart count  */
+.cart-count {
+    width: 12px;
+    height: 20px;
+    position: fixed;
+    z-index: 1200;
+    left: 86.5%;
+    top: 44px;
+    font-weight: 700;
+  }
+  
+
+.image-container {
+  background-color: #f8f7f5;
+}
+
+.image-container {
+  height: 600px;
+  background-color: #eee;
+  width: 100%;
+  position: relative;
+  top: 105px;
+}
+
+.food-img {
+  width: 43%;
+  position: relative;
+  left: 15%;
+  top: 20px;
+}
+
+.product-data-box {
+  height: 570px;
+  width: 27%;
+  z-index: 100;
+  right: 0px;
+  left: 64%;
+  top: 19%;
+  position: fixed;
+  background-color: white;
+  border-radius: 5px;
+  padding-left: 40px;
+  padding-right: 40px;
+  box-sizing: border-box;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.product-data-box > img {
+  width: 12%;
+  position: relative;
+}
+
+.product-data-box>h1{
+    font-family: 'National 2 Condensed', sans-serif;
+}
+
+.side-dish{
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #d6d5d5;
+    position:relative;
+    top: 20px;
+    box-sizing: border-box;
+}
+
+.side-dish p{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.side-dish span{
+    position: relative;
+    top: 5px;
+}
+
+.qty-div{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 50px;
+    align-items: center;   
+}
+.qty-div * {
+    margin: 0;
+}
+
+.qty-div>div{
+    display: flex;
+    width: 30%;
+    justify-content: space-around;   
+}
+.qty-div>div *{
+    margin: 0;
+    cursor: pointer;
+}
+
+#circle-min {
+    margin-top: 1px;
+    font-size: 1.3rem;
+}
+
+.qty-count{
+    font-size: 1.2rem;
+}
+
+.pick-store-btn{
+    position: relative;
+    top: 100px;
+    display: flex;
+    align-items: center;
+}
+.pick-store-btn>button{
+    background-color: #e4002b;
+    color: white;
+    margin: auto;
+    height: 50px;
+    width: 76%;
+    border: none;
+    border-radius: 35px;
+    font-size: 1rem;
+    cursor: pointer;
+
+}
+
+
+.product-details-page > p{
+    line-height: 25px;
+}
+
+
+/* side -receipe container */
+.side-dish-1{
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);   
+    gap: 20px;
+    position: relative;
+    top: 150px;
+    left: 100px;
+    border-bottom: 1px solid rgb(196, 196, 196);
+    padding-bottom: 100px;
+}
+
+.side-dish-img{
+    width: 70%;
+}
+
+.side-dish-card{
+   width: 100%;
+    height: 245px;
+    text-align: center;
+    background-color: #f0eeec;
+    box-shadow: rgba(0, 0, 0, 0.20) 1px 1px 10px 0;
+    cursor: pointer;
+}
+
+.side-dish-card p{
+    height: 50px;
+    position: relative;
+}
+.side-dish-card:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 5px 5px 10px 0;
+
+}
+.side-dish-card:hover .side-dish-img{
+    width: 72%;
+    transition: all 0.5s;
+}
+
+
+
+.side-head1{
+    font-family: 'National 2 Condensed', sans-serif;
+    position: relative;
+    top: 142px;
+    left: 97px;
+    width: 30%;   
+}
+/* beverage  */
+.beverage-head{
+    position: relative;
+    font-family: 'National 2 Condensed', sans-serif;
+    top: 196px;
+    left: 97px;
+    width: 30%;
+
+}
+
+
+.beverage-container{
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);   
+    gap: 20px;
+    position: relative;
+    top: 250px;
+    left: 100px;
+}
+
+.beverage-card-img{
+    width: 70%;
+}
+
+.beverage-card{
+   width: 100%;
+    height: 245px;
+    text-align: center;
+    background-color: #f0eeec;
+    box-shadow: rgba(0, 0, 0, 0.20) 1px 1px 10px 0;
+    cursor: pointer;
+}
+
+.beverage-card p{
+    height: 50px;
+    position: relative;
+}
+.beverage-card:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 5px 5px 10px 0;
+
+}
+.beverage-card:hover .beverage-card-img{
+    width: 72%;
+    transition: all 0.5s;
+}
+
+
+.check-icon{
+    color: red;
+    font-size: 1.4rem;
+}
+
+.check-box{
+    position: relative;
+    bottom: 231px;
+    left: 172px;
+    height: 33px;
+    width: 34px;
+    background-color: #eee;
+}
+
+.bev-check-box{
+    position: relative;
+    bottom: 231px;
+    left: 172px;
+    height: 33px;
+    width: 34px;
+    background-color: #eee;
+}
+
+
+/* delivery options  */
+.delivery-options-container{
+    width: 70%;
+    height: 500px;
+    display: none;
+    top: 100px;
+    left: 15%;
+    margin: auto;
+    background-color: #f8f7f5;
+    box-shadow: rgba(0, 0, 0, 0.20) 1px 1px 10px 0;
+    position: fixed;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: scroll;
+    z-index: 200;
+}
+.delivery-option-head{
+    background-color: white;
+    width: 100%;
+    font-family: 'National 2 Condensed', sans-serif;
+    font-size: 1.8rem;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-delivery-btn{
+    background-color: white;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    right: 0;
+    width: 50px;
+    height: 50px;
+}
+
+.close-delivery-btn>span{
+    font-size: 1.5rem;
+}
+
+.delivery-option-description{
+    margin: auto;
+    width: 50%;
+}
+
+.delivery-option-description h2{
+    font-family: 'National 2 Condensed', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 900;
+    
+}
+
+
+.delivery-image{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    height: 300px;
+    position: relative;
+}
+
+.delivery-img-left, .delivery-img-right{
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center
+}
+.delivery-img-left{
+    border-right: 1px solid black;
+}
+
+.delivery-img-left *, .delivery-img-right *{
+    margin: auto;
+    display: block;
+}
+
+.delivery-img-left img{
+    width: 30%;
+    height: 100px;
+}
+
+.delivery-img-right img{
+    width: 35%;
+    height: 113px;
+}
+
+
+.delivery-img-left button , .delivery-img-right button{
+    width: 50%;
+    height: 53px;
+    border-radius: 29px;
+    border: 1px solid black;
+    font-size: 1.2rem;
+    font-family: 'National 2 Condensed', sans-serif;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.delivery-img-left button:hover , .delivery-img-right button:hover{
+    background-color: rgb(125, 245, 241);
+}
+
+.or-div{
+    width: 35px;
+    height: 29px;
+    position: relative;
+    top: 188px;
+    left: 48.5%;
+    background-color: #f8f7f5;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'National 2 Condensed', sans-serif;
+    font-size: 1.2rem;
+    color: gray;
+}
+
+.display-block {
+    display: block;
+}
+
+/* footer  */
+.footer-div{
+    position: relative;
+    top: 400px;
+    /* z-index:100; */
+}
+
+
+.bev-p{
+    display:flex;
+}
+
+.bev-p>span:last-child{
+    margin-left: 15px;
+}
+

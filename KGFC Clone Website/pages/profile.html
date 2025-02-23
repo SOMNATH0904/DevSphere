@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile-page</title>
+    <!-- ! Css -->
+    <link rel="stylesheet" href="../styles/profile.css" />
+    <link rel="stylesheet" href="../components/navbar/navbar.css" />
+    <link rel="stylesheet" href="../components/footer/footer.css" />
+
+    <!-- font awesome  -->
+    <script
+      src="https://kit.fontawesome.com/b78a585d56.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/b78a585d56.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- !favicon  -->
+    <link
+      rel="icon"
+      href="https://cdn.iconscout.com/icon/free/png-256/kfc-2-226243.png?w=128&f=avif"
+    />
+  </head>
+  <body>
+    <!-- !Navbar Section -->
+    <div class="navbar"></div>
+    <!-- Header div -->
+    <div class="account-detail-container">
+      <div class="header-profile-div">
+        <h1>Orders Arriving at</h1>
+        <i class="fa-solid fa-clock"></i>
+        <h1 class="counter">30.00</h1>
+        <h1>Mins</h1>
+      </div>
+      <!-- Account Details -->
+      <div class="account-head">
+        <div class="left-div" id="left-div-id">
+          <img
+            src="https://online.kfc.co.in/static/media/Strips.4f336307.svg"
+            alt="error"
+          />
+          <div class="head-wish">
+            <h5>GOOD EVENING</h5>
+            <h5>ANKIT GADHWE!</h5>
+          </div>
+          <div class="account-detail">
+            <button class="order-his-btn">Order History</button>
+            <p>My Favourite Menu</p>
+            <p>Addresses</p>
+            <p>Account Setting</p>
+          </div>
+
+          <button class="sign-out-btn">Sign Out</button>
+        </div>
+
+        <!-- Right Section -->
+        <div class="Right-side">
+          <div class="order-history">
+            <h2>ORDER HISTORY</h2>
+            <div class="order-btn-div">
+              <p>
+                Looking for a specific order?
+                <button
+                  class="Order-lookup"
+                  onclick="window.location.href='form.html'"
+                >
+                  Order lookup
+                </button>
+              </p>
+            </div>
+          </div>
+
+          <div class="view-menu-div">
+            <!-- <p>No order have been placed in the past 12 months</p> -->
+            <div class="Order-container"></div>
+            <button class="View-menu">View Menu</button>
+          </div>
+
+          <div class="question-div">
+            <h2>HAVE A QUESTION?</h2>
+            <p>Connect with a specialist for answers</p>
+            <button class="get-help" onclick="window.location.href='help.html'">
+              GET HELP
+            </button>
+          </div>
+        </div>
+
+        <!-- <div class="timer"></div> -->
+      </div>
+    </div>
+    <!-- !Footer Section -->
+    <!-- <div class="footer-div">
+
+</div> -->
+    <!-- !Java Script -->
+    <script type="module" src="../scripts/profile.js"></script>
+  </body>
+</html>

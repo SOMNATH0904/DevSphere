@@ -1,0 +1,328 @@
+/* -------------------------------------------- Global CSS */
+body,
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+h1,
+h2 {
+  font-family: "Roboto Condensed", sans-serif;
+  text-transform: uppercase;
+}
+
+ul,
+li {
+  list-style: none;
+  line-height: 1.5;
+  padding: 3.6px 0px 19.04px;
+  color: #494949;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+a {
+  color: #494949;
+  text-decoration: none;
+}
+
+a:hover {
+  font-size: 18px;
+  color: #202124;
+  font-weight: 700;
+}
+
+button {
+  cursor: pointer;
+}
+/* -------------------------------------------- Global CSS */
+
+#menupage-body {
+  display: flex;
+  justify-content: space-between;
+  width: 1314px;
+  margin: 0px auto;
+  /* border: 1px solid crimson; */
+}
+
+#menupage-body > div {
+  /* border: 1px solid blue; */
+  padding: 0px 15px;
+}
+
+#menu-items {
+  width: 328px;
+  position: fixed;
+  top: 145px;
+  z-index: 1;
+}
+
+#product-items {
+  width: 985px;
+  margin-top: 83px;
+  margin-left: 275px;
+  z-index: 3;
+}
+
+.search-box img {
+  padding-right: 8px;
+}
+
+.search-box > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin: 0px 0px 6px;
+  padding: 8px 17px;
+  border-style: none;
+  border-radius: 25px;
+  border: 1px solid rgb(160, 160, 160);
+}
+
+.search-box > button:hover {
+  border: 2.5px solid #ffc107;
+}
+
+#search-value {
+  border-style: none;
+  outline: 0px;
+}
+
+#product-items > div:nth-child(1) {
+  padding-bottom: 15px;
+  border-bottom: 2px solid black;
+  margin-bottom: 67px;
+}
+
+#EXCLUSIVE {
+  background-color: #f8f7f5;
+  padding-top: 36px;
+  padding-left: 36px;
+}
+
+.menu-card {
+  width: 430px;
+  margin-top: 48px;
+  padding-bottom: 50px;
+}
+
+.menu_card_details > div {
+  margin: 11px auto;
+}
+
+.menu-card > div > img {
+  width: 100%;
+  object-fit: contain;
+}
+
+/* .menu-card-2 {
+  width: 430px;
+  padding-bottom: 50px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.menu-card-2 > div > img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.menu-card-2-btn {
+
+}
+.menu-card-2 > div:last-child {
+  display: flex;
+  justify-content: center;
+} */
+
+/* .menu_card_details {
+  padding: 10px 24px;
+} */
+
+.dot {
+  height: 5px;
+  width: 5px;
+  background-color: black;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0px 8px;
+}
+
+#btn-Addtocart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 14px;
+  background-color: #e40026;
+  padding: 11px 40px;
+  margin-top: 2rem;
+  border-style: none;
+  border-radius: 25px;
+}
+#btn-Addtocart > img {
+  padding-left: 10px;
+}
+
+.strikoff_price {
+  text-decoration: line-through;
+  font-weight: 600;
+}
+.price {
+  color: #ff2e00;
+  font-weight: 600;
+}
+.menu_card_title {
+  font-weight: 600;
+}
+
+#order-banner {
+  text-align: center;
+  margin-top: 103px;
+  padding: 24px 0px;
+  background-color: #202124;
+  color: white;
+  font-weight: 700;
+  font-style: "Roboto Condensed", sans-serif;
+}
+
+.btn_order {
+  color: #ffffff;
+  font-size: 14px;
+  background-color: #e40026;
+  margin-left: 8px;
+  padding: 11px 40px;
+  border-style: none;
+  border-radius: 25px;
+}
+
+.box_shadow {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* -------------------------------------------- CARD CSS */
+.card_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  row-gap: 40px;
+  padding-bottom: 48px;
+}
+.card_header_title {
+  padding: 36px 0px 45px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 8px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.card .card_img img {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.card .card_img img:hover {
+  border: 1px solid orange;
+}
+
+.card .card_details {
+  padding: 10px 24px;
+}
+.card .card_details > div {
+  margin: 11px auto;
+}
+.card_btn_div {
+  text-align: center;
+  margin: 30px 0px 20px;
+}
+.btn_addtoCart {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 14px;
+  background-color: #e40026;
+  padding: 11px 40px;
+  border-style: none;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+
+.btn_addtoCart:hover {
+  border: 1px solid orange;
+}
+.btn_addtoCart img {
+  padding-left: 10px;
+}
+/* -------------------------------------------- CARD CSS */
+
+#CHIZZA,
+#CHICKEN,
+#NEW,
+#BIRYANI,
+#BOX,
+#BURGERS,
+#SNACKS,
+#BEVERAGES {
+  padding-top: 50px;
+}
+
+/* -------------------------------------------- SEARCH-SORT-FILTER-CSS */
+#ssf {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#ssf > div {
+  margin: auto 8px;
+}
+#clear-search {
+  display: none;
+}
+
+#sortby-price {
+  background-color: white;
+  margin: 0px 0px 6px;
+  padding: 8px 17px;
+  border-style: none;
+  border-radius: 25px;
+  border: 1px solid rgb(160, 160, 160);
+}
+
+#sortby-price:hover {
+  border: 2.5px solid #ffc107;
+}
+
+#filterby-veg {
+  background-color: white;
+  margin: 0px 0px 6px;
+  padding: 8px 17px;
+  border-style: none;
+  border-radius: 25px;
+  border: 1px solid rgb(160, 160, 160);
+}
+#filterby-veg:hover {
+  border: 2.5px solid #ffc107;
+}
+
+.cart-count {
+  width: 12px;
+  height: 20px;
+  position: fixed;
+  z-index: 1200;
+  left: 86.5%;
+  top: 42px;
+  font-weight: 700;
+}

@@ -1,0 +1,10 @@
+/* preloader */
+
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    overflow: hidden;
+    background: #fff url("https://jolly-hawking-c11904.netlify.app/images/KFC_Loader_Gif.gif") no-repeat center center;
+}
