@@ -1,0 +1,63 @@
+{
+  "name": "spotify-profile",
+  "version": "0.1.0",
+  "private": true,
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "engines": {
+    "node": "10.13.0"
+  },
+  "babelMacros": {
+    "styledComponents": {
+      "pure": true
+    }
+  },
+  "homepage": "https://spotify-profile.herokuapp.com",
+  "proxy": "http://localhost:8888",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "lint-staged": {
+    "*.{js,css,json,md}": [
+      "prettier --write"
+    ],
+    "*.{js}": [
+      "eslint --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "@reach/router": "^1.2.1",
+    "axios": "^0.21.1",
+    "babel-plugin-macros": "^2.6.1",
+    "chart.js": "^2.8.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-scripts": "3.1.1",
+    "styled-components": "^4.3.2"
+  },
+  "devDependencies": {
+    "@upstatement/eslint-config": "^0.4.2",
+    "babel-plugin-styled-components": "^1.10.6",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "husky": "^3.0.5",
+    "lint-staged": "^9.2.5"
+  }
+}
