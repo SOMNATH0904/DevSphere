@@ -1,0 +1,47 @@
+{
+  "name": "zippy-x-server",
+  "version": "1.0.0",
+  "description": "This is backend for VaultX App",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "npx nodemon --delay 500ms"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yntpdotme/zippy-x/server"
+  },
+  "keywords": [
+    "nodejs",
+    "expressjs",
+    "mongodb",
+    "docker"
+  ],
+  "author": "Akash Kadlag",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.2.0",
+    "express-session": "^1.18.0",
+    "helmet": "^7.1.0",
+    "hpp": "^0.2.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.3.2",
+    "morgan": "^1.10.0",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "request-ip": "^3.3.0",
+    "winston": "^3.13.0",
+    "winston-mongodb": "^5.1.1",
+    "zod": "^3.23.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

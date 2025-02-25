@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "ES6",
+    "paths": {
+      "@assets": ["/src/assets/*"],
+      "@components": ["/src/components/*"],
+      "@data": ["/src/data/*"],
+      "@features": ["/src/features/*"],
+      "@hooks": ["/src/hooks/*"],
+      "@layouts": ["/src/layouts/*"],
+      "@pages": ["/src/pages/*"],
+      "@services": ["/src/services/*"],
+      "@recoil": ["/src/recoil/*"],
+    }
+  }
+}
