@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background 1s ease;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .dialog-box {
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    opacity: 1;
+    transition: opacity 1s ease;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  .scene-0 {
+    background-image: url('pics/0.jpg');
+  }
+  
+  .scene-1 {
+    background-image: url('pics/1.jpg');
+  }
+  
+  .scene-2 {
+    background-image: url('pics/2.jpg');
+  }
+  
+  .scene-3 {
+    background-image: url('pics/3.jpg');
+  }
+
+  .scene-4 {
+    background-image: url('pics/4.jpg');
+  }
+  
+  .scene-5 {
+    background-image: url('pics/5.jpg');
+  }
+
+  .scene-6 {
+    background-image: url('pics/6.jpg');
+  }
+
+  .scene-7 {
+    background-image: url('pics/7.jpg');
+  }
+
+  .scene-8 {
+    background-image: url('pics/8.jpg');
+  }
+
+  .scene-9 {
+    background-image: url('pics/9.jpg');
+  }
+
+  .scene-10 {
+    background-image: url('pics/10.jpg');
+  }
+
+  .hidden {
+    opacity: 0;
+  }
+  
