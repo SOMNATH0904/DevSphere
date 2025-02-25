@@ -1,0 +1,25 @@
+<h1><%= type[:name] %></h1>
+
+<%= include.('notices.html', notices: type[:notices]) %>
+
+<%= type[:description] %>
+
+<% unless type[:implemented_by].empty? %>
+
+<h2>Implemented by</h2>
+
+<ul>
+  <% type[:implemented_by].each do |implementor| %>
+    <li><code><a href="<%= base_url %>/object/<%= slugify.(implementor) %>"><%= implementor %></a></code></li>
+  <% end %>
+</ul>
+
+<% end %>
+
+<% unless type[:fields].empty? %>
+
+<h2>Fields</h2>
+
+<%= include.('fields.html', fields: type[:fields]) %>
+
+<% end %>

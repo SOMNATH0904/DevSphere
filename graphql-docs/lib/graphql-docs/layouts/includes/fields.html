@@ -1,0 +1,19 @@
+<% fields.each do |field| %>
+
+<div class="field-entry <%= classes[:field_entry] %>">
+  <span id="<%= slugify.(field[:name]) %>" class="field-name anchored"><%= field[:name] %> (<code><a href="<%= base_url %>/<%= field[:type][:path] %>"><%= field[:type][:info] %></a></code>)</span>
+
+  <div class="description-wrapper">
+    <%= include.('deprecations.html', item: field) %>
+
+    <%= include.('notices.html', notices: field[:notices]) %>
+
+    <%= markdownify.(field[:description]) %>
+
+    <% unless field[:arguments].empty? %>
+      <%= include.('arguments.html', arguments: field[:arguments]) %>
+    <% end %>
+  </div>
+</div>
+
+<% end %>

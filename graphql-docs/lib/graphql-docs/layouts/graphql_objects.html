@@ -1,0 +1,33 @@
+<h1><%= type[:name] %></h1>
+
+<%= include.('notices.html', notices: type[:notices]) %>
+
+<%= type[:description] %>
+
+<% unless type[:interfaces].empty? %>
+
+<h2>Implements</h2>
+
+<ul>
+  <% type[:interfaces].each do |interface| %>
+    <li><code><a href="<%= base_url %>/interface/<%= slugify.(interface) %>"><%= interface %></a></code></li>
+  <% end %>
+</ul>
+
+<% end %>
+
+<% unless type[:connections].empty? %>
+
+<h2>Connections</h2>
+
+<%= include.('connections.html', connections: type[:connections]) %>
+
+<% end %>
+
+<% unless type[:fields].empty? %>
+
+<h2>Fields</h2>
+
+<%= include.('fields.html', fields: type[:fields]) %>
+
+<% end %>

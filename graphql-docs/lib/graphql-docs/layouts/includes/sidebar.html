@@ -1,0 +1,154 @@
+<div id="search">
+  <img src="<%= base_url %>/assets/images/search.svg">
+  <input autocomplete="off" placeholder="Search" />
+</div>
+<ul class="categories">
+  <li>
+    <ul class="menu-root">
+      <li>
+        <a href="<%= base_url.present? ? base_url : '/' %>">GraphQL Reference</a>
+    </ul>
+  </li>
+
+  <li>
+    <p>Operations</p>
+    <ul class="menu-root">
+      <li>
+        <a href="<%= base_url %>/operation/query/" class="sidebar-link<% if title == "Query" %> current<% end %>">
+          Query
+        </a>
+      </li>
+      <li>
+        <a href="<%= base_url %>/operation/mutation/" class="sidebar-link<% if title == "Mutation" %> current<% end %>">
+          Mutation
+        </a>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <p><a href="<%= base_url %>/operation/query">Queries</a></p>
+    <ul class="menu-root">
+      <% graphql_query_types.().each do |type| %>
+      <% @name = type[:name] %>
+      <li>
+        <a href="<%= base_url %>/query/<%= @name.downcase %>/" class="sidebar-link<% if title == @name %> current<% end %>">
+          <%= @name %>
+        </a>
+      </li>
+      <% end %>
+    </ul>
+  </li>
+
+  <li>
+    <p><a href="<%= base_url %>/operation/mutation">Mutations</a></p>
+    <ul class="menu-root">
+      <% graphql_mutation_types.().each do |type| %>
+      <% @name = type[:name] %>
+      <li>
+        <a href="<%= base_url %>/mutation/<%= @name.downcase %>/" class="sidebar-link<% if title == @name %> current<% end %>">
+          <%= @name %>
+        </a>
+      </li>
+      <% end %>
+    </ul>
+  </li>
+
+  <li>
+    <p><a href="<%= base_url %>/object">Objects</a></p>
+    <ul class="menu-root">
+      <% graphql_object_types.().each do |type| %>
+        <% @name = type[:name] %>
+      <li>
+        <a href="<%= base_url %>/object/<%= @name.downcase %>/" class="sidebar-link<% if title == @name %> current<% end %>">
+          <%= @name %>
+        </a>
+      </li>
+      <% end %>
+    </ul>
+  </li>
+
+  <li>
+    <p><a href="<%= base_url %>/interface">Interfaces</a></p>
+    <ul class="menu-root">
+      <% graphql_interface_types.().each do |type| %>
+        <% @name = type[:name] %>
+        <li>
+          <a href="<%= base_url %>/interface/<%= @name.downcase %>/" class="sidebar-link<% if title == @name %> current<% end %>">
+            <%= @name %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </li>
+
+  <li>
+    <p><a href="<%= base_url %>/enum">Enums</a></p>
+    <ul class="menu-root">
+      <% graphql_enum_types.().each do |type| %>
+      <% @name = type[:name] %>
+      <li>
+        <a href="<%= base_url %>/enum/<%= @name.downcase %>/" class="sidebar-link<% if title == @name %> current<% end %>">
+          <%= @name %>
+        </a>
+      </li>
+      <% end %>
+    </ul>
+  </li>
+
+  <li>
+    <p><a href="<%= base_url %>/union">Unions</a></p>
+    <ul class="menu-root">
+      <% graphql_union_types.().each do |type| %>
+      <% @name = type[:name] %>
+      <li>
+        <a href="<%= base_url %>/union/<%= @name.downcase %>/" class="sidebar-link<% if title == @name %> current<% end %>">
+          <%= @name %>
+        </a>
+      </li>
+      <% end %>
+    </ul>
+  </li>
+
+  <li>
+    <p><a href="<%= base_url %>/input_object">Input Objects</a></p>
+    <ul class="menu-root">
+      <% graphql_input_object_types.().each do |type| %>
+      <% @name = type[:name] %>
+      <li>
+        <a href="<%= base_url %>/input_object/<%= @name.downcase %>/" class="sidebar-link<% if title == @name %> current<% end %>">
+          <%= @name %>
+        </a>
+      </li>
+      <% end %>
+    </ul>
+  </li>
+
+  <li>
+    <p><a href="<%= base_url %>/scalar">Scalars</a></p>
+    <ul class="menu-root">
+      <% graphql_scalar_types.().each do |type| %>
+      <% @name = type[:name] %>
+      <li>
+        <a href="<%= base_url %>/scalar/<%= @name.downcase %>/" class="sidebar-link<% if title == @name %> current<% end %>">
+          <%= @name %>
+        </a>
+      </li>
+      <% end %>
+    </ul>
+  </li>
+
+  <li>
+    <p><a href="<%= base_url %>/directive">Directives</a></p>
+    <ul class="menu-root">
+      <% graphql_directive_types.().each do |type| %>
+      <% @name = type[:name] %>
+      <li>
+        <a href="<%= base_url %>/directive/<%= @name.downcase %>/" class="sidebar-link<% if title == @name %> current<% end %>">
+          <%= @name %>
+        </a>
+      </li>
+      <% end %>
+    </ul>
+  </li>
+</ul>

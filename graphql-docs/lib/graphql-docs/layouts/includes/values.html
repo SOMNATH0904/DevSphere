@@ -1,0 +1,15 @@
+<h3 id="values">Values</h3>
+
+<% values.each do |value| %>
+
+  <h4 id="<%= slugify.(value[:name]) %>" class="name anchored"><%= value[:name] %></h4>
+
+  <div class="description-wrapper">
+    <%= include.('deprecations.html', item: value) %>
+
+    <%= include.('notices.html', notices: value[:notices]) %>
+
+    <%= markdownify.(value[:description]) %>
+  </div>
+
+<% end %>

@@ -1,0 +1,15 @@
+/.bundle/
+/.yardoc
+/Gemfile.lock
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+/output/
+/test/graphql-docs/fixtures/output/
+/.sass-cache/
+/output/
+.byebug_history
+*.gem
