@@ -9,6 +9,7 @@ import {
 import { Stack, useRouter, useSearchParams } from "expo-router";
 import { Text, SafeAreaView } from "react-native";
 import axios from "axios";
+import { RAPIDAPI_KEY, RAPIDAPI_HOST } from "@env"; // Import API key securely
 
 import { ScreenHeaderBtn, NearbyJobCard } from "../../components";
 import { COLORS, icons, SIZES } from "../../constants";
@@ -30,11 +31,10 @@ const JobSearch = () => {
     try {
       const options = {
         method: "GET",
-        url: `https://jsearch.p.rapidapi.com/search`,
+        url: `https://${RAPIDAPI_HOST}/search`, // Use secured host
         headers: {
-          "X-RapidAPI-Key":
-          'de73d95018msh3d5084b4e1e34e2p19f255jsn76c681ce5e64',
-          "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
+          "X-RapidAPI-Key": RAPIDAPI_KEY, // Use environment variable
+          "X-RapidAPI-Host": RAPIDAPI_HOST,
         },
         params: {
           query: params.id,
@@ -46,7 +46,7 @@ const JobSearch = () => {
       setSearchResult(response.data.data);
     } catch (error) {
       setSearchError(error);
-      console.log(error);
+      console.log("Error fetching jobs:", error);
     } finally {
       setSearchLoader(false);
     }
@@ -64,7 +64,7 @@ const JobSearch = () => {
 
   useEffect(() => {
     handleSearch();
-  }, []);
+  }, [page]); // Refetch data when page changes
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
@@ -103,7 +103,7 @@ const JobSearch = () => {
               {searchLoader ? (
                 <ActivityIndicator size="large" color={COLORS.primary} />
               ) : (
-                searchError && <Text>Oops something went wrong</Text>
+                searchError && <Text>Oops! Something went wrong.</Text>
               )}
             </View>
           </>
