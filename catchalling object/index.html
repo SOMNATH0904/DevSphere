@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch Falling Object</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #f0f8ff;
+            overflow: hidden;
+        }
+        #game-container {
+            position: relative;
+            width: 400px;
+            height: 500px;
+            margin: auto;
+            background-color: lightblue;
+            border: 2px solid black;
+        }
+        .basket {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            width: 60px;
+            height: 30px;
+            background-color: brown;
+            border-radius: 10px;
+            transform: translateX(-50%);
+        }
+        .object {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
+        }
+        #score {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Catch the Falling Object</h1>
+    <p id="score">Score: 0</p>
+    <div id="game-container">
+        <div class="basket" id="basket"></div>
+    </div>
+    <p>Use left and right arrow keys to move the basket.</p>
+    <script>
+        const basket = document.getElementById("basket");
+        const gameContainer = document.getElementById("game-container");
+        const scoreDisplay = document.getElementById("score");
+        let basketPosition = 170;
+        const basketSpeed = 20;
+        let score = 0;
+        
+        function moveBasket(event) {
+            if (event.key === "ArrowLeft" && basketPosition > 0) {
+                basketPosition -= basketSpeed;
+            } else if (event.key === "ArrowRight" && basketPosition < 340) {
+                basketPosition += basketSpeed;
+            }
+            basket.style.left = basketPosition + "px";
+        }
+        
+        function createFallingObject() {
+            const object = document.createElement("div");
+            object.classList.add("object");
+            object.style.left = Math.random() * 380 + "px";
+            object.style.top = "0px";
+            gameContainer.appendChild(object);
+            moveObject(object);
+        }
+        
+        function moveObject(object) {
+            let objectFall = setInterval(() => {
+                let objectTop = parseInt(object.style.top);
+                let objectLeft = parseInt(object.style.left);
+                let basketLeft = parseInt(basket.style.left);
+                
+                if (objectTop < 470) {
+                    object.style.top = objectTop + 5 + "px";
+                } else {
+                    clearInterval(objectFall);
+                    if (objectLeft >= basketLeft && objectLeft <= basketLeft + 60) {
+                        score++;
+                        scoreDisplay.textContent = "Score: " + score;
+                    }
+                    object.remove();
+                }
+            }, 50);
+        }
+        
+        document.addEventListener("keydown", moveBasket);
+        setInterval(createFallingObject, 1500);
+    </script>
+</body>
+</html>
