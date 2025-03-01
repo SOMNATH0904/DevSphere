@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Art Generator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/figlet/1.2.4/figlet.min.js"></script>
+    <style>
+        body {
+            font-family: monospace;
+            text-align: center;
+            background-color: #222;
+            color: #fff;
+            padding: 20px;
+        }
+        textarea, select, input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 16px;
+            padding: 10px;
+            background-color: #111;
+            border: 1px solid #555;
+            display: inline-block;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>ASCII Art Generator</h1>
+    <textarea id="inputText" placeholder="Type something..." rows="2" cols="30"></textarea>
+    <br>
+    <label for="fontSelect">Choose Font:</label>
+    <select id="fontSelect">
+        <option value="Standard">Standard</option>
+        <option value="Big">Big</option>
+        <option value="Small">Small</option>
+        <option value="Slant">Slant</option>
+        <option value="Ghost">Ghost</option>
+        <option value="Star Wars">Star Wars</option>
+    </select>
+    <br>
+    <label for="colorPicker">Text Color:</label>
+    <input type="color" id="colorPicker" value="#ffffff">
+    <label for="bgColorPicker">Background Color:</label>
+    <input type="color" id="bgColorPicker" value="#111111">
+    <br>
+    <button onclick="copyToClipboard()">Copy to Clipboard</button>
+    <br>
+    <pre id="asciiOutput"></pre>
+    
+    <script>
+        function generateASCII() {
+            const text = document.getElementById("inputText").value;
+            const font = document.getElementById("fontSelect").value;
+            figlet.text(text, { font: font }, function(err, data) {
+                if (!err) {
+                    const output = document.getElementById("asciiOutput");
+                    output.textContent = data;
+                    output.style.color = document.getElementById("colorPicker").value;
+                    output.style.backgroundColor = document.getElementById("bgColorPicker").value;
+                }
+            });
+        }
+
+        document.getElementById("inputText").addEventListener("input", generateASCII);
+        document.getElementById("fontSelect").addEventListener("change", generateASCII);
+        document.getElementById("colorPicker").addEventListener("input", generateASCII);
+        document.getElementById("bgColorPicker").addEventListener("input", generateASCII);
+        
+        function copyToClipboard() {
+            const asciiText = document.getElementById("asciiOutput").textContent;
+            navigator.clipboard.writeText(asciiText).then(() => {
+                alert("ASCII Art copied to clipboard!");
+            }).catch(err => {
+                console.error("Failed to copy: ", err);
+            });
+        }
+    </script>
+</body>
+</html>
