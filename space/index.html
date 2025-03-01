@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realistic Space Scene</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: radial-gradient(circle at center, #0d1b2a, #000);
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="spaceCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById("spaceCanvas");
+        const ctx = canvas.getContext("2d");
+        let stars = [], planets = [];
+        const numStars = 500;
+        const numPlanets = 3;
+
+        function initCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        function createStars() {
+            stars = [];
+            for (let i = 0; i < numStars; i++) {
+                stars.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 2 + 0.5,
+                    speed: Math.random() * 0.5 + 0.1,
+                    opacity: Math.random() * 0.8 + 0.2,
+                    color: `hsl(0, 0%, ${Math.random() * 100}%)`
+                });
+            }
+        }
+
+        function createPlanets() {
+            planets = [];
+            for (let i = 0; i < numPlanets; i++) {
+                planets.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 80 + 40,
+                    color: `hsl(${Math.random() * 360}, 100%, 50%)`
+                });
+            }
+        }
+
+        function drawStars() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            stars.forEach(star => {
+                ctx.globalAlpha = star.opacity;
+                ctx.fillStyle = star.color;
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+                ctx.fill();
+            });
+        }
+
+        function drawPlanets() {
+            planets.forEach(planet => {
+                ctx.fillStyle = planet.color;
+                ctx.shadowBlur = 20;
+                ctx.shadowColor = planet.color;
+                ctx.beginPath();
+                ctx.arc(planet.x, planet.y, planet.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.shadowBlur = 0;
+            });
+        }
+
+        function updateStars() {
+            stars.forEach(star => {
+                star.y += star.speed;
+                if (star.y > canvas.height) {
+                    star.y = 0;
+                    star.x = Math.random() * canvas.width;
+                }
+            });
+        }
+
+        function animate() {
+            updateStars();
+            drawStars();
+            drawPlanets();
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener("resize", () => {
+            initCanvas();
+            createStars();
+            createPlanets();
+        });
+
+        initCanvas();
+        createStars();
+        createPlanets();
+        animate();
+    </script>
+</body>
+</html>
