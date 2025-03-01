@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        textarea {
+            width: 80%;
+            height: 150px;
+            margin: 10px 0;
+            padding: 10px;
+        }
+        input, button {
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Secure Notes</h1>
+    <textarea id="note" placeholder="Write your secure note here..."></textarea><br>
+    <input type="password" id="password" placeholder="Enter password"><br>
+    <button onclick="saveNote()">Save Note</button>
+    <button onclick="loadNote()">Load Note</button>
+    <button onclick="deleteNote()">Delete Note</button>
+    <script>
+        function encrypt(text, password) {
+            return btoa(password + text);
+        }
+        function decrypt(text, password) {
+            const decrypted = atob(text);
+            return decrypted.startsWith(password) ? decrypted.slice(password.length) : null;
+        }
+        function saveNote() {
+            const note = document.getElementById("note").value;
+            const password = document.getElementById("password").value;
+            if (!note || !password) {
+                alert("Please enter both a note and a password.");
+                return;
+            }
+            localStorage.setItem("secureNote", encrypt(note, password));
+            alert("Note saved securely.");
+        }
+        function loadNote() {
+            const password = document.getElementById("password").value;
+            const encryptedNote = localStorage.getItem("secureNote");
+            if (!encryptedNote || !password) {
+                alert("No note found or missing password.");
+                return;
+            }
+            const decryptedNote = decrypt(encryptedNote, password);
+            if (decryptedNote === null) {
+                alert("Incorrect password.");
+            } else {
+                document.getElementById("note").value = decryptedNote;
+                alert("Note loaded successfully.");
+            }
+        }
+        function deleteNote() {
+            localStorage.removeItem("secureNote");
+            document.getElementById("note").value = "";
+            alert("Note deleted.");
+        }
+    </script>
+</body>
+</html>
