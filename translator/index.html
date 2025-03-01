@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline Translator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        select, input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #output {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Offline Language Translator</h1>
+    <select id="language">
+        <option value="spanish">Spanish</option>
+        <option value="french">French</option>
+        <option value="german">German</option>
+    </select>
+    <input type="text" id="inputWord" placeholder="Enter word">
+    <button onclick="translateWord()">Translate</button>
+    <p id="output"></p>
+    
+    <h3>Add Custom Translation</h3>
+    <input type="text" id="newWord" placeholder="Word">
+    <input type="text" id="newTranslation" placeholder="Translation">
+    <button onclick="addCustomTranslation()">Add</button>
+    
+    <script>
+        const translations = {
+            spanish: { "hello": "hola", "goodbye": "adiós", "please": "por favor" },
+            french: { "hello": "bonjour", "goodbye": "au revoir", "please": "s'il vous plaît" },
+            german: { "hello": "hallo", "goodbye": "auf wiedersehen", "please": "bitte" }
+        };
+
+        function translateWord() {
+            const lang = document.getElementById("language").value;
+            const word = document.getElementById("inputWord").value.toLowerCase();
+            const output = document.getElementById("output");
+            
+            if (translations[lang][word]) {
+                output.innerText = `Translation: ${translations[lang][word]}`;
+            } else {
+                output.innerText = "Translation not found";
+            }
+        }
+
+        function addCustomTranslation() {
+            const lang = document.getElementById("language").value;
+            const newWord = document.getElementById("newWord").value.toLowerCase();
+            const newTranslation = document.getElementById("newTranslation").value;
+            
+            if (newWord && newTranslation) {
+                translations[lang][newWord] = newTranslation;
+                alert(`Added: ${newWord} -> ${newTranslation}`);
+            } else {
+                alert("Please enter both word and translation");
+            }
+        }
+    </script>
+</body>
+</html>
