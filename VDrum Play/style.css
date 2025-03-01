@@ -1,0 +1,131 @@
+body {
+    text-align: center;
+    background-color: #283149;
+}
+  
+  h1 {
+    font-size: 5rem;
+    color: #DBEDF3;
+    font-family: "Arvo", cursive;
+    text-shadow: 3px 0 #DA0463;
+  
+}
+
+
+.container{
+    margin: 10% auto;
+}
+
+
+.pressed {
+    box-shadow: 0 3px 4px 0 #DBEDF3;
+    opacity: 0.5;
+}
+  
+.red {
+    color: red;
+}
+  
+
+.image-container {
+    position: relative;
+    width: 800px;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: auto;
+}
+
+.drum-kit-image {
+    width: 100%;
+    height: 100%;
+    display: center;
+    border-radius: 10px;
+
+}
+
+.overlay {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    border: 2px solid #DA0463; /* Optional outline for buttons */
+    border-radius: 50%;
+    color: #DA0463;
+    font-weight: bold;
+    font-size: 1rem;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.1s;
+}
+
+.overlay:active {
+    transform: scale(0.95); 
+}
+
+
+.w{
+    top: 50%;
+    left: 20%;
+}
+
+.a{
+    top: 38%;
+    left: 30%;
+}
+
+.s{
+    top: 38%;
+    left: 56%;
+}
+
+.d{
+    top: 46.5%;
+     left: 65%;
+}
+
+
+.j{
+    top: 12%;
+    left: 20.5%;
+}
+
+
+
+.k{
+    top: 14%;
+    left: 63%;
+}
+
+.l{
+    top: 65%;
+    left: 45%;
+
+}
+
+.m{
+    top: 28%; 
+    left: 79%;
+}
+
+
+
+
+.footer {
+    background-color: #283149;
+    color: #DBEDF3; 
+    text-align: center; 
+    padding: 20px 0; 
+    font-size: 1.5rem; 
+    font-family: 'Arvo', sans-serif; 
+    position: relative;
+    bottom: 0; 
+    width: 100%; 
+    
+}
+
+
