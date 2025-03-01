@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLI Portfolio</title>
+    <style>
+        body {
+            background-color: black;
+            color: lime;
+            font-family: monospace;
+            padding: 20px;
+        }
+        #terminal {
+            width: 80%;
+            height: 400px;
+            border: 2px solid lime;
+            padding: 10px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+        }
+        #input {
+            background: black;
+            color: lime;
+            border: none;
+            font-family: monospace;
+            width: 100%;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>CLI Portfolio</h1>
+    <div id="terminal"></div>
+    <input type="text" id="input" autofocus>
+    
+    <script>
+        const terminal = document.getElementById("terminal");
+        const input = document.getElementById("input");
+        
+        const commands = {
+            help: "Available commands: about, projects, contact, clear",
+            about: "Hi! I'm a passionate developer interested in AI, ML, and web development.",
+            projects: "1. DevSphere\n2. Lifecare\n3. Tick Tock\n(Type 'project [number]' for details)",
+            "project 1": "DevSphere - A platform for dev collaboration.",
+            "project 2": "Lifecare - A medical record management app.",
+            "project 3": "Tick Tock - A student productivity tracker.",
+            contact: "Email: example@email.com | GitHub: github.com/example",
+            clear: ""
+        };
+
+        function executeCommand(command) {
+            if (command === "clear") {
+                terminal.innerHTML = "";
+                return;
+            }
+            const output = commands[command] || "Command not found. Type 'help' for available commands.";
+            terminal.innerHTML += `> ${command}\n${output}\n`;
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+
+        input.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                const command = input.value.trim().toLowerCase();
+                executeCommand(command);
+                input.value = "";
+            }
+        });
+    </script>
+</body>
+</html>
