@@ -1,0 +1,98 @@
+body {
+    font-family: 'Merriweather', serif !important;
+    background-image: url('background1.jpg');
+    height: 100vh;
+    background-position: center;
+}
+
+nav.bg-custom {
+    background-color: #172e36;
+}
+
+.r-name {
+    font-family: 'Cinzel Decorative', cursive;
+    font-weight: 700;
+}
+
+.form-container {
+    margin-top: 3rem;
+}
+
+.submit-button {
+    border-radius: 25px;
+    border: 2px solid rgba(0, 0, 0, 0.8);
+    background: white;
+    color: black;
+    padding: 5px 20px;
+    transition: all 400ms ease-out;
+}
+
+.submit-button:hover {
+    background: #3988ad;
+    color: #FEFFFF;
+    border: 2px solid rgb(4, 110, 119);
+}
+
+.restaurant-container {
+    margin-top: 20px !important;
+    /* line-height: 3em !important; */
+}
+
+@media (min-width: 768px) {
+    .restaurant-container {
+        width: 70% !important;
+    }
+}
+
+.res-card {
+    /*   border: 1px solid rgba(0, 0, 0, 0.8) !important; */
+    padding: 1.2em;
+    border-radius: 10px;
+    z-index: 1;
+    box-shadow: 3px 3px 6px 1px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease-out;
+    background: #fcfbed;
+}
+
+.res-card:hover {
+    z-index: 10;
+    box-shadow: 0px 0px 20px 0px rgba(#575656, 0.6);
+    background: white;
+}
+
+.card-horizontal {
+    display: flex !important;
+    flex-warp: no-wrap;
+    flex: 1 1 auto !important;
+}
+
+.timing {
+    color: green;
+}
+
+.res-content {
+    line-height: 1em !important;
+}
+
+.more-info {
+    float: right;
+    padding: 0.7em 1em;
+    border: none;
+    color: #eee;
+    background-color: rgba(23, 37, 42, 0.9);
+    outline: none;
+    transition: all 0.4s ease-out;
+}
+
+.more-info>a,
+.more-info>a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.more-info:hover {
+    border: none;
+    color: white;
+    background-color: #0e578e;
+    box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.2);
+}

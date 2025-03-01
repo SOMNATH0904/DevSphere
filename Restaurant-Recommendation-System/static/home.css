@@ -1,0 +1,42 @@
+                body {
+                    font-family: 'Merriweather', serif !important;
+                    background-image: url('background1.jpg');
+                    /* height: 100%; */
+                    background-position: center;
+                }
+                
+                .container {
+                    color: #ececec;
+                }
+                
+                nav.nav-item.nav-link {
+                    color: white !important;
+                }
+                
+                .r-name {
+                    font-family: 'Cinzel Decorative', cursive;
+                    font-weight: 700;
+                }
+                
+                .submit-button {
+                    border-radius: 25px;
+                    border: 2px solid rgba(0, 0, 0, 0.8);
+                    background: rgba(0, 0, 0, 0.4);
+                    color: white;
+                    padding: 5px 20px;
+                    transition: all 400ms ease-out;
+                }
+                
+                .submit-button:hover {
+                    background: rgb(4, 110, 119, 0.8);
+                    color: #FEFFFF;
+                    border: 2px solid rgb(4, 110, 119);
+                }
+                
+                .fa-github:hover {
+                    color: rgb(65, 5, 65);
+                }
+                
+                .fa-linkedin-square:hover {
+                    color: rgb(47, 5, 145);
+                }

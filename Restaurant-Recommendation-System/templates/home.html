@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative:400,700|Merriweather:400,700&display=swap" rel="stylesheet"> {% if title %}
+    <link href="{{ url_for('static', filename='search.css') }}" type="text/css" rel="stylesheet">
+    <title> Restaurants Spotter- {{ title }} </title>
+    {% else %}
+    <link href="{{  url_for('static', filename='home.css')}}" type="text/css" rel="stylesheet">
+    <title>Restaurants Spotter</title>
+    {% endif %}
+</head>
+
+<body>
+    <nav class=" text-center navbar navbar-expand-md navbar-dark bg-custom">
+        <a class="navbar-brand" href="{{ url_for('home') }}"><span class="r-name">Restaurants Spotter</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+    <div class="container align-items-center">
+        <div class="jumbotron text-center bg-jumbo" style="background: rgb(12, 12, 12, 0.4) !important; ">
+            <h1 style="color: rgb(0, 255, 42); font-weight: bolder; font-size: 50px;"> Hello <span style="color: rgb(114, 235, 225);"> Foddie </span> </h1>
+            <p class="lead" style="color: rgb(224, 252, 99);">Welcome to the City of Nawabs 🤴</p><br />
+            <p class="lead">Have your ever wanted to eat 🍟 outside but can't decide on a restaurant?</p><br />
+            <p>Let <span style="color: rgb(223, 236, 42); font-size: large;"><b>Restaurants Spotter</b></span> helps you!</p>
+            <br />
+            <div class="container justify-content-start">
+                <form action="{{ url_for('search') }}" method="POST">
+                    <div class="row">
+                        <div class="col-12 col-md-2">
+                            <div class="form-group">
+                                <input type="number" class="form-control" min="1" id="people" name="people" placeholder="No. of People" required>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-2">
+                            <div class="form-group">
+                                <input type="number" class="form-control" name="min_Price" placeholder="Min Budget" required>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-2">
+                            <div class="form-group">
+                                <input type="number" class="form-control" name="max_Price" placeholder="Max Budget" required>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <div class="form-group">
+                                <select class="custom-select" id="cuisine" name="cuisine" placeholder="Cuisine">
+                                    <option value="none">Select a cuisine</option>                
+                                    <option value="North Indian">North Indian</option><option value="Mughlai">Mughlai</option><option value="Chinese">Chinese</option>
+                                    <option value="South Indian">South Indian</option><option value="Awadhi">Awadhi</option><option value="Continental">Continental</option>
+                                    <option value="Desserts">Desserts</option><option value="Bakery">Bakery</option><option value="Fast Food">Fast Food</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <div class="form-group">
+                                <select class="custom-select" id="locality" name="locality" placeholder="Locality">
+                                    <option value="none">Select a Locality</option>
+                                    <option value="Aliganj">Aliganj</option><option value="Aminabad">Aminabad</option><option value="Gomti Nagar">Gomti Nagar</option>
+                                    <option value="Chowk">Chowk</option><option value="Hazratganj">Hazratganj</option><option value="Lalbagh">Lalbagh</option>
+                                    <option value="Kaiserbagh">Kaiserbagh</option><option value="RajajiPuram">RajajiPuram</option><option value="Charbagh">Charbagh</option>
+                                    <option value="Mahanagar">Mahanagar</option><option value="Khurram Nagar">Khurram Nagar</option></select>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row text-center" style="margin-top: 5vh;">
+                        <div class="col-12">
+                            <button class="submit-button"><img src="https://image.flaticon.com/icons/svg/1889/1889949.svg" width="25px" height="20px" class="mr-2">Get Restaurants</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-center">
+        <div class=" text-center" style="padding: 0.2rem;background: rgb(12, 12, 12, 0.6);border: solid orange 2px;">
+            <span style="color: white; font-weight: bold;">Developed by <b style="color: chartreuse;"> Sarvesh Sharma</b></span>&emsp;
+            <a target="_blank " style="font-size:xx-large; color: #d5d7da; " href="https://github.com/shsarv "><i class="fa fa-github " aria-hidden="true "></i></a>&emsp;
+            <a target="_blank " style="font-size:xx-large; color: #0077B5; " href="https://www.linkedin.com/in/sarvesh-kumar-sharma-869a1b185/ "><i class="fa fa-linkedin-square " aria-hidden="true "></i>
+            </i></a>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js " integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js " integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6 " crossorigin="anonymous "></script>
+</body>
+
+</html>
