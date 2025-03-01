@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Notes App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #121212;
+            color: white;
+        }
+        #notes-container {
+            max-width: 600px;
+            margin: auto;
+            text-align: left;
+        }
+        textarea, input, button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .note {
+            background: #333;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .buttons {
+            display: flex;
+            gap: 5px;
+        }
+        .buttons button {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Secure Notes App</h1>
+    <div id="notes-container">
+        <input type="text" id="note-title" placeholder="Title">
+        <textarea id="note-content" placeholder="Write your note here..."></textarea>
+        <input type="password" id="note-password" placeholder="Password">
+        <button onclick="saveNote()">Save Note</button>
+        <div id="notes"></div>
+    </div>
+
+    <script>
+        let notes = JSON.parse(localStorage.getItem("notes")) || [];
+
+        function saveNote() {
+            const title = document.getElementById("note-title").value;
+            const content = document.getElementById("note-content").value;
+            const password = document.getElementById("note-password").value;
+            if (title && content && password) {
+                const encryptedContent = btoa(content);
+                notes.push({ title, content: encryptedContent, password });
+                localStorage.setItem("notes", JSON.stringify(notes));
+                displayNotes();
+            }
+        }
+
+        function displayNotes() {
+            const notesDiv = document.getElementById("notes");
+            notesDiv.innerHTML = "";
+            notes.forEach((note, index) => {
+                const noteEl = document.createElement("div");
+                noteEl.classList.add("note");
+                noteEl.innerHTML = `
+                    <h3>${note.title}</h3>
+                    <input type="password" placeholder="Enter password to view" id="pass-${index}">
+                    <button onclick="viewNote(${index})">View</button>
+                    <div class="buttons">
+                        <button onclick="deleteNote(${index})">Delete</button>
+                        <button onclick="editNote(${index})">Edit</button>
+                    </div>
+                `;
+                notesDiv.appendChild(noteEl);
+            });
+        }
+
+        function viewNote(index) {
+            const passInput = document.getElementById(`pass-${index}`);
+            if (passInput.value === notes[index].password) {
+                alert(`Note Content: ${atob(notes[index].content)}`);
+            } else {
+                alert("Incorrect Password!");
+            }
+        }
+
+        function deleteNote(index) {
+            notes.splice(index, 1);
+            localStorage.setItem("notes", JSON.stringify(notes));
+            displayNotes();
+        }
+
+        function editNote(index) {
+            const newContent = prompt("Edit your note:", atob(notes[index].content));
+            if (newContent !== null) {
+                notes[index].content = btoa(newContent);
+                localStorage.setItem("notes", JSON.stringify(notes));
+                displayNotes();
+            }
+        }
+
+        displayNotes();
+    </script>
+</body>
+</html>
