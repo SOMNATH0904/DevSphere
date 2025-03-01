@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Filter App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            color: #333;
+        }
+        canvas {
+            border: 2px solid #444;
+            max-width: 100%;
+            margin-top: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input[type=range] {
+            width: 200px;
+            cursor: pointer;
+        }
+        button {
+            margin: 10px;
+            padding: 12px 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h2>Image Filter Application</h2>
+    <input type="file" id="upload" accept="image/*"><br><br>
+    <canvas id="canvas"></canvas>
+    <div class="controls">
+        <label>Grayscale <input type="range" id="grayscale" min="0" max="100" value="0"></label>
+        <label>Sepia <input type="range" id="sepia" min="0" max="100" value="0"></label>
+        <label>Invert <input type="range" id="invert" min="0" max="100" value="0"></label>
+        <label>Blur <input type="range" id="blur" min="0" max="10" value="0"></label>
+        <label>Brightness <input type="range" id="brightness" min="50" max="200" value="100"></label>
+        <label>Contrast <input type="range" id="contrast" min="50" max="200" value="100"></label>
+    </div>
+    <button onclick="resetFilters()">Reset</button>
+    <button onclick="downloadImage()">Download</button>
+
+    <script>
+        const upload = document.getElementById('upload');
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        let img = new Image();
+        let originalImage = null;
+
+        upload.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        img.onload = function() {
+            canvas.width = img.width / 2;
+            canvas.height = img.height / 2;
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            originalImage = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        };
+
+        document.querySelectorAll('input[type=range]').forEach(slider => {
+            slider.addEventListener('input', applyFilters);
+        });
+
+        function applyFilters() {
+            if (!originalImage) return;
+            ctx.putImageData(originalImage, 0, 0);
+            const filters = `
+                grayscale(${document.getElementById('grayscale').value}%)
+                sepia(${document.getElementById('sepia').value}%)
+                invert(${document.getElementById('invert').value}%)
+                blur(${document.getElementById('blur').value}px)
+                brightness(${document.getElementById('brightness').value}%)
+                contrast(${document.getElementById('contrast').value}%)
+            `;
+            canvas.style.filter = filters;
+        }
+
+        function resetFilters() {
+            document.querySelectorAll('input[type=range]').forEach(slider => slider.value = slider.defaultValue);
+            applyFilters();
+        }
+
+        function downloadImage() {
+            const link = document.createElement('a');
+            link.download = 'edited-image.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+    </script>
+</body>
+</html>
